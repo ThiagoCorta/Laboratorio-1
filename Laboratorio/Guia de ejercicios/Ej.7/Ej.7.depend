@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1553372581 source:c:\users\thiag\desktop\nueva carpeta\ej.7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
