@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1554611440 source:c:\users\thiag\desktop\programacion facultad\noc\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

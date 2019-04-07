@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1554676303 source:c:\users\thiag\desktop\programacion facultad\stringss\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"corta.h"
+
+1554676216 source:c:\users\thiag\desktop\corta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"corta.h"
+
+1554676287 c:\users\thiag\desktop\corta.h
+
+1554360580 c:\users\thiag\desktop\programacion facultad\stringss\corta.h
+

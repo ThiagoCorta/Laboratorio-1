@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1554503433 source:d:\nueva carpeta\mejorafuncion\main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1554612255 source:c:\users\thiag\desktop\programacion facultad\pruebas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
