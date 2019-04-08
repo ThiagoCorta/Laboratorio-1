@@ -193,7 +193,7 @@ void ordenarVectores( int vector[], int vector2[], int vector3[], char vectorSex
 
     int auxInt;
     char auxChar;
-    char auxString[50];
+    char auxString[tam][50];
     float auxFloat;
 
 
@@ -225,20 +225,25 @@ void ordenarVectores( int vector[], int vector2[], int vector3[], char vectorSex
                 vector4[i] = vector4[j];
                 vector4[j] = auxInt;
 
-               auxFloat = vectorFloat[i];
-               vectorFloat[i] = vectorFloat[j];
-               vectorFloat[j] = auxFloat;
+                auxFloat = vectorFloat[i];
+                vectorFloat[i] = vectorFloat[j];
+                vectorFloat[j] = auxFloat;
 
-                strcpy(auxString, nomApe[i]);
+                strcpy(auxString[0], nomApe[i]);
                 strcpy(nomApe[i], nomApe[j]);
-                strcpy(nomApe[j], auxString);
+                strcpy(nomApe[j], auxString[0]);
 
 
             }
             else
             {
-                if(vectorSex[i]==vectorSex[j] && vector[i]>vector[j])
-                {
+               if(vectorSex[i]==vectorSex[j] && (stricmp(nomApe[i], nomApe[j])==1))
+            {
+
+                    strcpy(auxString[0], nomApe[i]);
+                    strcpy(nomApe[i], nomApe[j]);
+                    strcpy(nomApe[j], auxString[0]);
+
                     auxInt = vector[i];
                     vector[i] = vector[j];
                     vector[j] = auxInt;
@@ -255,27 +260,45 @@ void ordenarVectores( int vector[], int vector2[], int vector3[], char vectorSex
                     vectorSex[i] = vectorSex[j];
                     vectorSex[j] = auxChar;
 
-                  auxFloat = vectorFloat[i];
+                    auxFloat = vectorFloat[i];
                     vectorFloat[i] = vectorFloat[j];
                     vectorFloat[j] = auxFloat;
 
                     auxInt = vector4[i];
                     vector4[i] = vector4[j];
                     vector4[j] = auxInt;
-
-                    strcpy(auxString, nomApe[i]);
-                    strcpy(nomApe[i], nomApe[j]);
-                    strcpy(nomApe[j], auxString);
-
                 }
 
-            }
 
+            }
         }
+
     }
+
 }
 
 
+void conseguirEntero (int entero[], int tam){
 
+    int i;
+
+    for(i=0 ; i<tam ; i++){
+        system("cls");
+        printf("Ingrese un entero: ");
+        scanf("%d", &entero[i]);
+    }
+
+}
+
+
+void mostrarEntero(int entero[], int tam){
+
+    int i;
+
+    for(i=0 ; i<tam ; i++){
+
+        printf("\n\tEntero posicion %d: %d", i, entero[i]);
+    }
+}
 
 

@@ -149,3 +149,8 @@ void duplicarVector(int vector[], int tam);
  */
 
 void ordenarVectores( int vector[], int vector2[], int vector3[], char vectorSex[], float vectorFloat[],char nomApe[][50], int vector4 [],int tam);
+
+
+void mostrarEntero(int entero[], int tam);
+
+void conseguirEntero (int entero[], int tam);
