@@ -7,7 +7,7 @@
 	<ctype.h>
 	"corta.h"
 
-1554676216 source:c:\users\thiag\desktop\corta.c
+1554683090 source:c:\users\thiag\desktop\corta.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -15,7 +15,14 @@
 	<ctype.h>
 	"corta.h"
 
-1554676287 c:\users\thiag\desktop\corta.h
+1554681745 c:\users\thiag\desktop\corta.h
 
 1554360580 c:\users\thiag\desktop\programacion facultad\stringss\corta.h
+
+1554683026 source:c:\users\thiag\desktop\laboratorio\ejercicios de funciones\stringss\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
 

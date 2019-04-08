@@ -31,10 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../../corta.c">
+		<Unit filename="../../../corta.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../corta.h" />
+		<Unit filename="../../../corta.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

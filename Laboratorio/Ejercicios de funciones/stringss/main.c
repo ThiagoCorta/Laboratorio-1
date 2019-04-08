@@ -3,8 +3,8 @@
 #include <string.h>
 #include <conio.h>
 #include <ctype.h>
-#include "corta.h"
-#define TAM 10
+
+#define TAM 5
 
 
 void ordenarVectores( int vector[], int vector2[], int vector3[], char vectorSex[], float vectorFloat[],char nomApe[][50], int vector4 [],int tam);
@@ -15,29 +15,43 @@ void pedirLegajos(int legajos[], int tam);
 int main()
 {
 
-    char nombreApellido[TAM][50]={"thiago tomas","diego tomas","lawea culia","diego ricar","papi shampu","duki fernandez","diego tomas","aguante duki","qlee pasabaa","naanan reloko"};
-    char sexo[TAM]={'f','m','m','f','m','m','f','m','m','f'};
-    int legajos[TAM]={1000,9000,5000,5845,1568,4564,9999,4874,5487,9548};
-    int edad[TAM]={11,15,16,18,20,15,14,15,60,88};
+    char nombreApellido[TAM][50]= {"Diego tomas","Aiego tomas","Aawea culia", "Aose qponer", "Aose denuevo"};
+    char sexo[TAM]= {'f','m','m','f','m'};
+    int legajos[TAM]= {8000,3000,5000,1845,2568};
+    int edad[TAM]= {11,15,16,18,20};
+    int notas1[TAM]= { 5, 7, 8, 3, 5 };
+    int notas2[TAM] = { 9, 5, 2, 9,5};
+    float auxFloat;
+    float promedios[TAM] = { 7, 6, 5, 6, 5 };
+    char auxChar;
 
 
-  //  pedirNomApe(nombreApellido,TAM);
-   // pedirLegajos(legajos,TAM);
-   // pedirSexo(sexo,TAM);
-   // pedirEdad(edad,TAM);
 
-    for(int i=0; i<TAM ; i++){
+    //  pedirNomApe(nombreApellido,TAM);
+    // pedirLegajos(legajos,TAM);
+    // pedirSexo(sexo,TAM);
+    // pedirEdad(edad,TAM);
 
-        printf("%s     %d    %c    %d   \n", nombreApellido[i], legajos[i], sexo[i], edad[i]);
+    printf("*** Listado de Alumnos ***\n\n");
+    printf("Legajo Sexo Nota1  Nota2  Promedio\n\n");
+
+    for(int i=0; i<TAM ; i++)
+    {
+
+        printf("%s     %d    %c    %d    %d    %d    %.2f  \n", nombreApellido[i], legajos[i], sexo[i], edad[i], notas1[i],notas2[i],promedios[i]);
     }
 
-   // ordenarVectores(legajos,sexo,TAM,nombreApellido,edad);
+    ordenarVectores(legajos,notas1,notas2,sexo,promedios,nombreApellido,edad,TAM);
 
-    printf("Ahora ordenados ndeaaa\n\n");
+    printf("\nAhora ordenados ndeaaa\n\n");
 
-     for(int i=0; i<TAM ; i++){
+    printf("*** Listado de Alumnos ***\n\n");
+    printf("Legajo Sexo Nota1  Nota2  Promedio\n\n");
 
-        printf("%s     %d    %c    %d   \n", nombreApellido[i], legajos[i], sexo[i], edad[i]);
+    for(int i=0; i<TAM ; i++)
+    {
+
+        printf("%s     %d    %c    %d    %d    %d    %.2f  \n", nombreApellido[i], legajos[i], sexo[i], edad[i], notas1[i],notas2[i],promedios[i]);
     }
 
 
@@ -134,14 +148,14 @@ void pedirLegajos(int legajos[], int tam){
 
 
 
+*/
 
-
-void ordenarVectores( int vector[], int vector2[], int vector3[], char vectorSex[], float vectorFloat[],char nomApe[][50], int vector4 [],int tam)
+/*void ordenarVectores( int vector[], int vector2[], int vector3[], char vectorSex[], float vectorFloat[],char nomApe[][50], int vector4 [],int tam)
 {
 
     int auxInt;
     char auxChar;
-    char auxString[50];
+    char auxString[tam][50];
     float auxFloat;
 
 
@@ -173,20 +187,25 @@ void ordenarVectores( int vector[], int vector2[], int vector3[], char vectorSex
                 vector4[i] = vector4[j];
                 vector4[j] = auxInt;
 
-               auxFloat = vectorFloat[i];
-               vectorFloat[i] = vectorFloat[j];
-               vectorFloat[j] = auxFloat;
+                auxFloat = vectorFloat[i];
+                vectorFloat[i] = vectorFloat[j];
+                vectorFloat[j] = auxFloat;
 
-                strcpy(auxString, nomApe[i]);
+                strcpy(auxString[0], nomApe[i]);
                 strcpy(nomApe[i], nomApe[j]);
-                strcpy(nomApe[j], auxString);
+                strcpy(nomApe[j], auxString[0]);
 
 
             }
             else
             {
-                if(vectorSex[i]==vectorSex[j] && vector[i]>vector[j])
-                {
+               if(vectorSex[i]==vectorSex[j] && (stricmp(nomApe[i], nomApe[j])==1))
+            {
+
+                    strcpy(auxString[0], nomApe[i]);
+                    strcpy(nomApe[i], nomApe[j]);
+                    strcpy(nomApe[j], auxString[0]);
+
                     auxInt = vector[i];
                     vector[i] = vector[j];
                     vector[j] = auxInt;
@@ -203,24 +222,23 @@ void ordenarVectores( int vector[], int vector2[], int vector3[], char vectorSex
                     vectorSex[i] = vectorSex[j];
                     vectorSex[j] = auxChar;
 
-                  auxFloat = vectorFloat[i];
+                    auxFloat = vectorFloat[i];
                     vectorFloat[i] = vectorFloat[j];
                     vectorFloat[j] = auxFloat;
 
                     auxInt = vector4[i];
                     vector4[i] = vector4[j];
                     vector4[j] = auxInt;
-
-                    strcpy(auxString, nomApe[i]);
-                    strcpy(nomApe[i], nomApe[j]);
-                    strcpy(nomApe[j], auxString);
-
                 }
 
-            }
 
+            }
         }
+
     }
+
 }
 
 */
+
+
