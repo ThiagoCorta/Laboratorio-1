@@ -17,6 +17,7 @@ typedef struct
 void mostrarEmpleado(Eempleado empleado[], int i);
 void mostrarEmpleados(Eempleado empleado[], int tam);
 void cargarEmpleado(Eempleado empleado[], int tam);
+int buscarVacio(Eempleado empleado[], int tam);
 
 
 int main()
@@ -164,15 +165,16 @@ void ordenarEstructura(Eempleado empleado[], int tam)
 void cargarEmpleado(Eempleado empleado[], int tam)
 {
     char auxString[100];
-    for(int i=0; i<tam; i++)
+    int index = buscarVacio(empleado,tam);
+    if(index!=-1)
     {
         printf("Ingresar legajo: ");
-        scanf("%d", &empleado[i].legajo);
+        scanf("%d", &empleado[index].legajo);
 
-        while(empleado[i].legajo<1000 || empleado[i].legajo>9999)
+        while(empleado[index].legajo<1000 || empleado[index].legajo>9999)
         {
             printf("Error, ingresar legajo: ");
-            scanf("%d", &empleado[i].legajo);
+            scanf("%d", &empleado[index].legajo);
         }
 
         printf("Ingresar nombre del empleado: ");
@@ -185,35 +187,52 @@ void cargarEmpleado(Eempleado empleado[], int tam)
             gets(auxString);
         }
 
-        strcpy(empleado[i].nombre, auxString);
+        strcpy(empleado[index].nombre, auxString);
 
         printf("Ingresar sexo del empleado sea f o m : ");
         fflush(stdin);
-        scanf("%c", &empleado[i].sexo);
+        scanf("%c", &empleado[index].sexo);
 
-        while(empleado[i].sexo!='f' && empleado[i].sexo!='m')
+        while(empleado[index].sexo!='f' && empleado[index].sexo!='m')
         {
             printf("Error, ingresar sexo del empleado sea f o m: ");
-            scanf("%c", &empleado[i].sexo);
+            scanf("%c", &empleado[index].sexo);
         }
 
         printf("Ingresar sueldo del empleado: ");
         fflush(stdin);
-        scanf("%f", &empleado[i].sueldo);
+        scanf("%f", &empleado[index].sueldo);
 
-        while(empleado[i].sueldo<0)
+        while(empleado[index].sueldo<0)
         {
             printf("Ingresar sueldo del empleado: ");
-            scanf("%f", &empleado[i].sueldo);
+            scanf("%f", &empleado[index].sueldo);
         }
 
-        empleado[i].estado=OCUPADO;
-        break;
+        empleado[index].estado=OCUPADO;
 
-        if(i==tam)
+    }
+
+        if(index==tam)
         {
             printf("No hay espacio en la memoria...\n");
+            system("cls");
+        }
+
+
+}
+
+int buscarVacio(Eempleado empleado[], int tam)
+{
+    int indice=-1;
+    for(int i=0;i<tam;i++)
+    {
+        if(empleado[i].estado==VACIO)
+        {
+            indice=i;
+            break;
         }
     }
 
+    return indice;
 }
