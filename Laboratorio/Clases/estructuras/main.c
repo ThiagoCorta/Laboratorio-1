@@ -16,7 +16,7 @@ typedef struct
 
 void mostrarEmpleado(Eempleado empleado[], int i);
 void mostrarEmpleados(Eempleado empleado[], int tam);
-void cargarEmpleado(Eempleado empleado[], int tam);
+int cargarEmpleado(Eempleado empleado[], int tam);
 int buscarVacio(Eempleado empleado[], int tam);
 
 
@@ -41,7 +41,15 @@ int main()
         switch(opcion)
         {
         case 1:
-            cargarEmpleado(nomina,3);
+            if(cargarEmpleado(nomina,3)==-1)
+            {
+                printf("No hay mas espacio..");
+            }
+            else
+            {
+                printf("Empleado generado.");
+            }
+
             break;
 
         case 2:
@@ -162,7 +170,7 @@ void ordenarEstructura(Eempleado empleado[], int tam)
     }
 }
 
-void cargarEmpleado(Eempleado empleado[], int tam)
+int cargarEmpleado(Eempleado empleado[], int tam)
 {
     char auxString[100];
     int index = buscarVacio(empleado,tam);
@@ -212,12 +220,13 @@ void cargarEmpleado(Eempleado empleado[], int tam)
         empleado[index].estado=OCUPADO;
 
     }
+    else
+    {
+        printf("No hay espacio en la memoria...\n");
+        system("cls");
+    }
 
-        if(index==tam)
-        {
-            printf("No hay espacio en la memoria...\n");
-            system("cls");
-        }
+    return index;
 
 
 }
