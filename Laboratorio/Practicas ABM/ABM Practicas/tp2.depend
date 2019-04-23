@@ -1,0 +1,127 @@
+# depslib dependency file v1.0
+1555315888 source:c:\users\thiag\desktop\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+	"../corta.h"
+
+1555285174 source:c:\users\thiag\desktop\corta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"corta.h"
+
+1555310235 c:\users\thiag\desktop\corta.h
+
+1555302450 source:c:\users\thiag\desktop\tp2\struct_empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"struct_empleados.h"
+	"../corta.h"
+
+1555302009 c:\users\thiag\desktop\tp2\struct_empleados.h
+
+1555316290 c:\users\thiag\desktop\tp2\arrayemployees.h
+
+1555315909 source:c:\users\thiag\desktop\tp2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+	"../corta.h"
+
+1555310235 source:c:\users\thiag\desktop\tp2\corta.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+	"../corta.h"
+
+1555486569 source:c:\users\thiag\desktop\trabajopractico2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+
+1555486000 c:\users\thiag\desktop\trabajopractico2\arrayemployees.h
+
+1555310235 source:c:\users\thiag\desktop\trabajopractico2\corta.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+	"../corta.h"
+
+1555486569 source:c:\users\thiag\desktop\trabajopractico2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+
+1555310235 c:\users\thiag\desktop\trabajopractico2\corta.h
+
+1555971970 source:c:\users\alumno\desktop\trabajopractico2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+
+1555972001 c:\users\alumno\desktop\trabajopractico2\arrayemployees.h
+
+1555970787 source:c:\users\alumno\desktop\trabajopractico2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+
+1556006649 source:c:\users\thiag\desktop\abmsector\nose\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+
+1556006649 c:\users\thiag\desktop\abmsector\nose\arrayemployees.h
+
+1556006649 source:c:\users\thiag\desktop\abmsector\nose\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+
