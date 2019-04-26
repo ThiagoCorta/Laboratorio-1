@@ -242,3 +242,7 @@ void mostrarCantEmpleadosXSector(eEmpleado empleados[], int tam, eSector sectore
 void SectorMasEmpleados( eEmpleado empleados[], int tam, eSector sectores[], int tamsec);
 
 void sectorConMayorPromedioSueldo(eEmpleado emp[],int tam, eSector sec[], int tamsec);
+
+void cantidadMyFPorSector(eEmpleado emp[],int tam, eSector sec[], int tamsec);
+
+void switchConsultas(eEmpleado emp[],int tam, eSector sec[], int tamsec);

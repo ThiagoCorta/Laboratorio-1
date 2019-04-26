@@ -125,3 +125,23 @@
 	<time.h>
 	"ArrayEmployees.h"
 
+1556264776 source:c:\users\thiag\desktop\practicas abm\abm practicas\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+
+1556264202 c:\users\thiag\desktop\practicas abm\abm practicas\arrayemployees.h
+
+1556264939 source:c:\users\thiag\desktop\practicas abm\abm practicas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+

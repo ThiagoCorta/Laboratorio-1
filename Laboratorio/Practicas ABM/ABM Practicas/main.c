@@ -18,6 +18,7 @@ int main()
     char seguir='s';
     int flag=0;
 
+
     inicializarEmpleados(empleados,TAM);
     hardCodearEmpleados(empleados,TAM);
     eSector sectores[]= {{1,"Sistemas"},{2,"RRHH"},{3,"ATCliente"},{4,"FrontEnd"},{5,"BackEnd"}};
@@ -99,17 +100,30 @@ int main()
             break;
 
         case 8:
+            switchConsultas(empleados,TAM,sectores,tamSec);
+            system("pause");
+            break;
+
+        case 9:
             seguir='n';
             break;
 
         }
-    }
-    while(seguir=='s');
+    }while(seguir=='s');
 
 
     return 0;
 
 }
+
+void empleadoMayorSueldoSec( eEmpleado empleados[], int tam, eSector sectores[], int tamsec)
+{
+
+
+
+
+}
+
 
 
 

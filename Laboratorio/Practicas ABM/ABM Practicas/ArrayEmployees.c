@@ -73,7 +73,8 @@ int menuAbm()
     printf("    5- Cantidad de empleados por sector: \n");
     printf("    6- Sectores con mas empleados: \n");
     printf("    7- Sectores con mayor promedio de sueldos: \n");
-    printf("    8- Salir: \n");
+    printf("    8- Mas funciones de consultas: \n");
+    printf("    9- Salir: \n");
 
     scanf("%d", &opcion);
 
@@ -810,7 +811,7 @@ void sectorConMayorPromedioSueldo(eEmpleado emp[],int tam, eSector sec[], int ta
     printf("-------Sector/es con mayor promedio de sueldo-------\n\n");
     for(int i=0; i < tamsec; i++){
             if( acumulador[i] == mayorAcu){
-                printf("%10s Con %.2f promedio de sueldos, con un total de %d empleados.\n", sec[i].descripcion, promedio,mayor);
+                printf("%10s Con %.2f promedio de sueldos con un total de %d empleados.\n", sec[i].descripcion, promedio,mayor);
             }
 
       }
@@ -818,8 +819,123 @@ void sectorConMayorPromedioSueldo(eEmpleado emp[],int tam, eSector sec[], int ta
 
 }
 
+void cantidadMyFPorSector(eEmpleado emp[],int tam, eSector sec[], int tamsec)
+{
+    int cantMujer[tamsec];
+    int cantHombres[tamsec];
 
 
+    for(int i=0; i < tamsec; i++)
+    {
+
+        cantMujer[i] = 0;
+        cantHombres[i]=0;
+        for(int j=0; j < tam; j++)
+        {
+            if( sec[i].id == emp[j].sector && emp[j].ocupado == 1)
+            {
+               if(emp[j].sexo=='f')
+               {
+                   cantMujer[i]++;
+               }
+               else
+               {
+                   if(emp[j].sexo=='m')
+                   {
+                       cantHombres[i]++;
+                   }
+
+               }
+            }
+        }
+    }
+
+
+    printf("-------Cantidad de Hombres y Mujeres por sectores-------\n\n");
+    for(int i=0; i < tamsec; i++){
+        printf("Sector : %10s", sec[i].descripcion);
+        printf("    Cantidad Hombres: %d  Cantidad Mujeres: %d \n", cantHombres[i],cantMujer[i]);
+
+
+      }
+
+
+}
+
+int menuConsultas()
+{
+
+    int opcion;
+
+    system("cls");
+    printf("#     # ####### #     # #     #       #    ######  #     #\n");
+    printf("##   ## #       ##    # #     #      # #   #     # ##   ##\n");
+    printf("# # # # #       # #   # #     #     #   #  #     # # # # #\n");
+    printf("#  #  # #####   #  #  # #     #    #     # ######  #  #  #\n");
+    printf("#     # #       #   # # #     #    ####### #     # #     #\n");
+    printf("#     # #       #    ## #     #    #     # #     # #     #\n");
+    printf("#     # ####### #     #  #####     #     # ######  #     #\n\n");
+    printf("    1-  Cantidad de hombres y mujeres por sector:\n");
+    printf("    2-  \n");
+    printf("    3-  \n");
+    printf("    4-  \n");
+    printf("    5-  \n");
+    printf("    6-  \n");
+    printf("    7-  \n");
+    printf("    8-  \n");
+    printf("    9- Salir: \n");
+
+    scanf("%d", &opcion);
+
+    return opcion;
+
+}
+
+void switchConsultas(eEmpleado emp[],int tam, eSector sec[], int tamsec)
+{
+
+    switch(menuConsultas())
+    {
+        case 1:
+            cantidadMyFPorSector(emp,tam,sec,tamsec);
+        break;
+
+        case 2:
+            empleadoMayorSueldoSec(emp,tam,sec,tamsec);
+            break;
+
+        case 3:
+            printf("Funcion vacia.");
+            break;
+
+        case 4:
+            printf("Funcion vacia.");
+            break;
+
+        case 5:
+            printf("Funcion vacia.");
+            break;
+
+        case 6:
+            printf("Funcion vacia.");
+            break;
+
+        case 7:
+            printf("Funcion vacia.");
+            break;
+
+        case 8:
+            printf("Funcion vacia.");
+            break;
+
+        case 9:
+            printf("Funcion vacia.");
+            break;
+    }
+
+
+
+}
 
 
 
