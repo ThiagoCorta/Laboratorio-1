@@ -1,20 +1,29 @@
 typedef struct
 {
-    int id;
-    char descripcion[20];
-}eSector;
+    int dia;
+    int mes;
+    int anio;
+
+}eFecha;
 
 typedef struct{
     int id;
     char descripcion[20];
-} eComida;
+}eComida;
 
 typedef struct{
     int id;
     int idEmpleado;
     int idComida;
+    eFecha fecha;
 
 }eAlmuerzo;
+
+typedef struct
+{
+    int id;
+    char descripcion[21];
+}eSector;
 
 typedef struct
 {
@@ -24,6 +33,7 @@ typedef struct
     char sexo;
     int sector;
     float sueldo;
+    eFecha fechaing;
     int ocupado;
 
 } eEmpleado;
@@ -232,12 +242,9 @@ void hardCodearEmpleados(eEmpleado vec[], int tam);
 
 void pedirSexo(eEmpleado vec[], int indice);
 
-
 int esSoloLetras(char str[]);
 
-
 int getStringLetras(char mensaje[],char input[]);
-
 
 void getValidString(char requestMessage[],char errorMessage[], char input[]);
 
@@ -255,10 +262,5 @@ void SectorMasEmpleados( eEmpleado empleados[], int tam, eSector sectores[], int
 
 void sectorConMayorPromedioSueldo(eEmpleado emp[],int tam, eSector sec[], int tamsec);
 
+void empleadoMayorSueldoSec( eEmpleado emp[], int tam, eSector sec[], int tamsec);
 void cantidadMyFPorSector(eEmpleado emp[],int tam, eSector sec[], int tamsec);
-
-void switchConsultas(eEmpleado emp[],int tam, eSector sec[], int tamsec);
-
-void nombreLargoYSueldo(eEmpleado emp[],int tam, eSector sec[], int tamsec);
-
-void empleadoMayorSueldoSec(eEmpleado emp[],int tam, eSector sec[], int tamsec);

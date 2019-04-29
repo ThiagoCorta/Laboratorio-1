@@ -73,8 +73,9 @@ int menuAbm()
     printf("    5- Cantidad de empleados por sector: \n");
     printf("    6- Sectores con mas empleados: \n");
     printf("    7- Sectores con mayor promedio de sueldos: \n");
-    printf("    8- Mas funciones de consultas: \n");
-    printf("    9- Salir: \n");
+    printf("    8- Cantidad Hombres y mujeres por sector;\n");
+    printf("    9- Empleados mayor sueldo sector;\n");
+    printf("    10- Salir: \n");
 
     scanf("%d", &opcion);
 
@@ -94,7 +95,7 @@ void mostrarEmpleado(eEmpleado emp, eSector sectores [], int tam)
 
     //obtenerSectores(sectores,tam,emp.sector,nombreSector);
 
-    printf("%5d %12s %12s %10c %10.2f %15s \n", emp.legajo, emp.nombre,emp.apellido,emp.sexo,emp.sueldo, nombreSector);
+    printf("%5d %12s %12s %10c %10.2f %7.02d/%02d/%4d %15s \n", emp.legajo, emp.nombre,emp.apellido,emp.sexo,emp.sueldo, emp.fechaing.dia,emp.fechaing.mes,emp.fechaing.anio,nombreSector);
 
 }
 
@@ -104,8 +105,8 @@ void mostrarEmpleados(eEmpleado empleados[], int tam, eSector sectores[], int ta
 
     system("cls");
     printf("\n");
-    printf("%5s %12s %12s %10s %9s %15s \n", "Legajo", "Nombre", "Apellido", "Sexo", "Salario", "Sector");
-    printf("%5s %12s %12s %10s %9s %15s \n", "------", "------", "--------", "----", "-------", "------");
+    printf("%5s %12s %12s %10s %9s %15s %15s \n", "Legajo", "Nombre", "Apellido", "Sexo", "Salario","FechaIngreso","Sector");
+    printf("%5s %12s %12s %10s %9s %15s %15s \n", "------", "------", "--------", "----", "-------","------------","------");
 
     for(int i = 0 ; i < tam ; i++)
     {
@@ -176,7 +177,7 @@ int altaEmpleado(eEmpleado vec[], int tam, eSector sec[], int tamsec)
             enteroIng=pedirEntero("Ingresar Sector de la empresa: ");
 
 
-            while(enteroIng<0 || enteroIng>5)
+            while(enteroIng<0 || enteroIng>tamsec)
             {
                 enteroIng=pedirEntero("Error, ingresar sector valido");
             }
@@ -184,6 +185,9 @@ int altaEmpleado(eEmpleado vec[], int tam, eSector sec[], int tamsec)
             vec[indice].sector=enteroIng;
 
             vec[indice].ocupado=1;
+
+            printf("Ingrese fecha de ingreso dd/mm/aaaa: ");
+            scanf("%d %d %d", &vec[indice].fechaing.dia, &vec[indice].fechaing.mes, &vec[indice].fechaing.anio);
 
             printf("\n El empleado a sido registrado!\n");
 
@@ -434,15 +438,11 @@ void ingresarNombre(eEmpleado vec[], int indice)
 {
     char auxString[150];
 
-    printf("\nIngresar nombre del empleado :\n");
-    fflush(stdin);
-    gets(auxString);
+    getValidString("Ingresar nombre del empleado:\n", "Error Ingresar un nombre valido\n", auxString);
 
     while(strlen(auxString)>50)
     {
-        printf("Error ingresar un nombre valido :\n");
-        fflush(stdin);
-        gets(auxString);
+        getValidString("Error Ingresar un nombre valido:\n", "Error Ingresar un nombre valido: \n", auxString);
     }
 
     strlwr(auxString);
@@ -456,15 +456,11 @@ void ingresarNombre(eEmpleado vec[], int indice)
 void ingresarApellido(eEmpleado vec[], int indice)
 {
     char auxString[150];
-    printf("\nIngresar apellido del empleado : \n");
-    fflush(stdin);
-    gets(auxString);
+    getValidString("Ingresar nombre apellido:\n", "Error Ingresar un apellido valido\n", auxString);
 
     while(strlen(auxString)>50)
     {
-        printf("Error ingresar un apellido valido :\n");
-        fflush(stdin);
-        gets(auxString);
+        getValidString("Error Ingresar un apellido valido:\n", "Error Ingresar un apellido valido: \n", auxString);
     }
     strlwr(auxString);
     auxString[0]=toupper(auxString[0]);
@@ -577,18 +573,18 @@ int cantidadSuperaPromedio(eEmpleado vec [], int tam)
 void hardCodearEmpleados(eEmpleado vec[], int tam)
 {
     eEmpleado empleados [13]= {
-    {1554, "juan", "perez", 'm', 1 , 24000,1},
-    {8294, "cristina", "ferrera", 'f', 2 , 29000,1},
-    {5648, "thiago", "corta", 'm', 3 , 34000,1},
-    {1954, "diego", "fernandez", 'm', 3 , 44000,1},
-    {5657, "camila", "celano", 'f', 3 , 18000,1},
-    {9874, "federico", "callejeros", 'm', 2 , 19000,1},
-    {1358, "nerea", "pereyra", 'f', 5 , 25000,1},
-    {9999, "matias", "hamie", 'f', 5 , 30000,1},
-    {1564, "dani", "class", 'm', 1 , 44000,1},
-    {1954, "sabrina", "nosee", 'f', 1 , 14000,1},
-    {1564, "victoria", "sanchez", 'f', 3 , 28000,1},
-    {5668, "noseqponer", "bastaaa", 'm', 4 , 49000,1}};
+    {1234, "juan", "perez", 'm', 1 , 24000,{12,3,2000},1},
+    {8294, "cristina", "ferrera", 'f', 2 , 29000,{12,3,2000},1},
+    {5648, "thiago", "corta", 'm', 3 , 34000,{12,3,2000},1},
+    {1954, "diego", "fernandez", 'm', 3 , 44000,{12,3,2000},1},
+    {5657, "camila", "celano", 'f', 3 , 18000,{12,3,2000},1},
+    {9874, "federico", "callejeros", 'm', 2 , 19000,{12,3,2000},1},
+    {1358, "nerea", "pereyra", 'f', 5 , 25000,{12,3,2000},1},
+    {9999, "matias", "hamie", 'f', 5 , 30000,{12,3,2000},1},
+    {1564, "dani", "class", 'm', 1 , 44000,{12,3,2000},1},
+    {1954, "sabrina", "nosee", 'f', 1 , 14000,{12,3,2000},1},
+    {1564, "victoria", "sanchez", 'f', 3 , 28000,{12,3,2000},1},
+    {5668, "noseqponer", "bastaaa", 'm', 4 , 49000,{12,3,2000},1}};
     for(int i=0;i<tam;i++)
     {
         vec[i]= empleados[i];
@@ -862,100 +858,30 @@ void cantidadMyFPorSector(eEmpleado emp[],int tam, eSector sec[], int tamsec)
 
 }
 
-int menuConsultas()
+void empleadoMayorSueldoSec( eEmpleado emp[], int tam, eSector sec[], int tamsec)
 {
 
-    int opcion;
-
-    system("cls");
-    printf("#     # ####### #     # #     #       #    ######  #     #\n");
-    printf("##   ## #       ##    # #     #      # #   #     # ##   ##\n");
-    printf("# # # # #       # #   # #     #     #   #  #     # # # # #\n");
-    printf("#  #  # #####   #  #  # #     #    #     # ######  #  #  #\n");
-    printf("#     # #       #   # # #     #    ####### #     # #     #\n");
-    printf("#     # #       #    ## #     #    #     # #     # #     #\n");
-    printf("#     # ####### #     #  #####     #     # ######  #     #\n\n");
-    printf("    1-  Cantidad de hombres y mujeres por sector:\n");
-    printf("    2-  Mayores sueldos por sectores: \n");
-    printf("    3-  Nombres mas largos y mayor sueldo.\n");
-    printf("    4-  \n");
-    printf("    5-  \n");
-    printf("    6-  \n");
-    printf("    7-  \n");
-    printf("    8-  \n");
-    printf("    9- Salir: \n");
-
-    scanf("%d", &opcion);
-
-    return opcion;
-
-}
-
-void switchConsultas(eEmpleado emp[],int tam, eSector sec[], int tamsec)
-{
-
-    switch(menuConsultas())
-    {
-        case 1:
-            cantidadMyFPorSector(emp,tam,sec,tamsec);
-        break;
-
-        case 2:
-            empleadoMayorSueldoSec(emp,tam,sec,tamsec);
-            break;
-
-        case 3:
-            nombreLargoYSueldo(emp,tam,sec,tamsec);
-            break;
-
-        case 4:
-            printf("Funcion vacia.");
-            break;
-
-        case 5:
-            printf("Funcion vacia.");
-            break;
-
-        case 6:
-            printf("Funcion vacia.");
-            break;
-
-        case 7:
-            printf("Funcion vacia.");
-            break;
-
-        case 8:
-            printf("Funcion vacia.");
-            break;
-
-        case 9:
-            printf("Funcion vacia.");
-            break;
-    }
-
-
-
-}
-
-void empleadoMayorSueldoSec(eEmpleado emp[],int tam, eSector sec[], int tamsec)
-{
-
-    int mayor[tamsec];
+    float mayor[tamsec];
+    float acumulador[tamsec];
     int flag;
-
 
     for(int i=0; i < tamsec; i++)
     {
+
+        acumulador[i]=0;
         mayor[i]=0;
         flag=0;
         for(int j=0; j < tam; j++)
         {
             if( sec[i].id == emp[j].sector && emp[j].ocupado == 1)
             {
-                if(flag==0 || mayor[i] < emp[j].sueldo)
+                if( flag == 0 || mayor[i] < emp[j].sueldo)
                 {
-                    mayor[i] = emp[j].sueldo;
+
+                    acumulador[i] = emp[j].sueldo;
+                    mayor[i] = acumulador[i];
                     flag=1;
+
                 }
 
             }
@@ -963,70 +889,19 @@ void empleadoMayorSueldoSec(eEmpleado emp[],int tam, eSector sec[], int tamsec)
     }
 
 
-    printf("-------Mayor sueldo por sector-------\n\n");
-    for(int i=0; i < tamsec; i++)
-    {
-        for(int j=0; j<tam; j++)
-        {
-
-            if( sec[i].id==emp[j].sector && emp[j].sueldo >= mayor[i])
+    printf("-------Empleado con mayor sueldo por sector-------\n\n");
+    for(int i=0; i < tamsec; i++){
+            for(int j=0; j<tam ; j++)
             {
-                mostrarEmpleado(emp[j],sec,tam);
+                if( emp[j].sector == sec[i].id &&emp[j].sueldo >= mayor[i] && emp[j].ocupado==1){
+                mostrarEmpleado(emp[j],sec,tamsec);
 
             }
 
-        }
-
-
-    }
-
-
-}
-
-void nombreLargoYSueldo(eEmpleado emp[],int tam, eSector sec[], int tamsec)
-{
-
-    int mayor[tamsec];
-    int flag;
-    int nombre[tamsec];
-
-
-    for(int i=0; i < tamsec; i++)
-    {
-        mayor[i]=0;
-        flag=0;
-        nombre[i]=0;
-        for(int j=0; j < tam; j++)
-        {
-            if( sec[i].id == emp[j].sector && emp[j].ocupado == 1)
-            {
-                if(flag==0 || mayor[i] < strlen(emp[j].nombre))
-                {
-                   nombre[i]=strlen(emp[j].nombre);
-                    mayor[i]=nombre[i];
-                    flag=1;
-                }
-
-            }
-        }
-    }
-
-    printf("-------Nombre mas largo por sector-------\n\n");
-    for(int i=0; i < tamsec; i++)
-    {
-        for(int j=0; j<tam; j++)
-        {
-
-            if( sec[i].id==emp[j].sector && strlen(emp[j].nombre) >= mayor[i])
-            {
-                mostrarEmpleado(emp[j],sec,tam);
 
             }
 
-        }
-
-
-    }
+      }
 
 
 }

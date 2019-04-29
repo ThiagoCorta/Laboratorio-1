@@ -145,7 +145,7 @@
 	<time.h>
 	"ArrayEmployees.h"
 
-1556332218 source:c:\users\alumno\desktop\practicas abm\abm practicas\arrayemployees.c
+1556503764 source:c:\users\thiag\desktop\laboratorio-1-master\laboratorio\practicas abm\abm practicas\arrayemployees.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -154,9 +154,29 @@
 	<time.h>
 	"ArrayEmployees.h"
 
-1556332218 c:\users\alumno\desktop\practicas abm\abm practicas\arrayemployees.h
+1556514857 c:\users\thiag\desktop\laboratorio-1-master\laboratorio\practicas abm\abm practicas\arrayemployees.h
 
-1556331363 source:c:\users\alumno\desktop\practicas abm\abm practicas\main.c
+1556514831 source:c:\users\thiag\desktop\laboratorio-1-master\laboratorio\practicas abm\abm practicas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+
+1556514899 source:c:\users\thiag\desktop\abm practicas sec-fecha\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+
+1556520274 c:\users\thiag\desktop\abm practicas sec-fecha\arrayemployees.h
+
+1556566032 source:c:\users\thiag\desktop\abm practicas sec-fecha\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
