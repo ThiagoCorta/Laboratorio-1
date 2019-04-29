@@ -149,6 +149,11 @@ int main()
             system("pause");
             break;
 
+            case 13:
+            empleadosPorComidasYnombre(almuerzos,TamA,empleados,TAM,comidas,TAMC,sectores,tamSec);
+            system("pause");
+            break;
+
         }
     }while(seguir=='s');
 
@@ -437,6 +442,30 @@ int empleadosPorComidas(eAlmuerzo almuerzo[], int tamAlmuerzo, eEmpleado emp[], 
             if(almuerzo[j].idComida==comidas[i].id)
             {
                 mostrarAlmuerzo(almuerzo[j],comidas,tamComida,emp,tam,sec,tamsec);
+            }
+
+        }
+    }
+
+}
+
+int empleadosPorComidasYnombre(eAlmuerzo almuerzo[], int tamAlmuerzo, eEmpleado emp[], int tam, eComida comidas[], int tamComida, eSector sec[], int tamsec)
+{
+    char auxComida[25];
+    int indice;
+
+    for(int i = 0 ; i < tamComida ; i ++)
+    {
+        strcpy(auxComida,comidas[i].descripcion);
+        printf("\nComida : %s\n\n", auxComida);
+
+        for(int j = 0 ; j < tamAlmuerzo; j++)
+        {
+
+            if(almuerzo[j].idComida==comidas[i].id)
+            {
+                indice=obtenerEmpleado(emp,tamAlmuerzo,almuerzo[j].idEmpleado);
+                printf("%s %s\n", emp[indice].nombre,emp[indice].apellido);
             }
 
         }
