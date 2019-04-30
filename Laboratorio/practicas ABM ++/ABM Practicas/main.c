@@ -9,7 +9,7 @@
 #define TAM 12
 #define tamSec 6
 #define TAMC 5
-#define TamA 14
+#define TamA 16
 
 int obtenerSectores(eSector sectores[], int tam, int idSector, char desc[]);
 
@@ -31,20 +31,21 @@ int main()
     eComida comidas[] = {{6,"Milanesa"},{7,"Fideos"},{8,"Pizza"},{9,"Sopa"},{10,"Pescado"}};
     eAlmuerzo almuerzos[]={
                 {100,1234,6,{1,8,2017}},
-                {101,8294,7,{1,8,2017}},
+                {101,1234,7,{1,8,2017}},
                 {102,5648,6,{1,8,2017}},
                 {103,1954,9,{1,8,2017}},
-                {104,9874,10,{1,8,2017}},
-                {105,8294,9,{1,8,2017}},
-                {106,5648,8,{1,8,2017}},
-                {107,1954,7,{1,8,2017}},
-                {108,9874,6,{1,8,2017}},
-                {109,1954,10,{1,8,2017}},
-                {110,9874,9,{1,8,2017}},
-                {111,8294,8,{1,8,2017}},
-                {112,5648,7,{1,8,2017}},
-                {113,1954,6,{1,8,2017}},
-                {114,9874,10,{1,8,2017}}};
+                {104,9874,8,{1,8,2017}},
+                {105,8294,8,{1,8,2017}},
+                {106,5648,10,{1,8,2017}},
+                {107,5657,7,{1,8,2017}},
+                {108,9874,9,{1,8,2017}},
+                {109,9999,6,{1,8,2017}},
+                {110,1358,8,{1,8,2017}},
+                {111,8294,10,{1,8,2017}},
+                {112,5648,10,{1,8,2017}},
+                {113,1564,6,{1,8,2017}},
+                {114,5668,10,{1,8,2017}},
+                {000,0,0,{0,0,0000}}};
 
 
 
@@ -151,6 +152,17 @@ int main()
 
             case 13:
             empleadosPorComidasYnombre(almuerzos,TamA,empleados,TAM,comidas,TAMC,sectores,tamSec);
+            system("pause");
+            break;
+
+            case 14:
+            cargarAlmuerzo(almuerzos,TamA,comidas,TAMC,empleados,TAM,sectores,tamSec);
+           // mostrarComidas(comidas,TAMC);
+            system("pause");
+            break;
+
+            case 15:
+            almuerzosPorSector(almuerzos,TamA,empleados,TAM,comidas,TAMC,sectores,tamSec);
             system("pause");
             break;
 
@@ -334,7 +346,7 @@ void mostrarComidas( eComida comidas[], int tamc){
     }
 }
 
-/*void cargarAlmuerzo(eAlmuerzo almuerzo[], int tamAlmuerzo, eComida comidas[], int tamComidas, eEmpleado emp[], int tam, eSector sec[], int tamsec)
+void cargarAlmuerzo(eAlmuerzo almuerzo[], int tamAlmuerzo, eComida comidas[], int tamComidas, eEmpleado emp[], int tam, eSector sec[], int tamsec)
 {
     int leg;
     int esta;
@@ -347,7 +359,7 @@ void mostrarComidas( eComida comidas[], int tamc){
     esta = buscarEmpleado(emp,tam,leg);
 
 
-    while(esta!=-1)
+    if(esta!=-1)
     {
        indice= buscarAlmuerzoVacio(almuerzo,tamAlmuerzo);
 
@@ -357,7 +369,7 @@ void mostrarComidas( eComida comidas[], int tamc){
 
         almuerzo[indice].id=auxInt;
 
-        mostrarComidas(comidas,tamComidas);
+        mostrarComidas(comidas,tamComidas),
 
         auxInt= pedirEntero("Ingresar comida : \n");
 
@@ -376,7 +388,7 @@ void mostrarComidas( eComida comidas[], int tamc){
 
 
 }
-*/
+
 void inicializarAlmuerzos(eAlmuerzo almuerzo[], int tamAlmuerzo){
 
     for(int i=0;i<tamAlmuerzo;i++)
@@ -472,6 +484,39 @@ int empleadosPorComidasYnombre(eAlmuerzo almuerzo[], int tamAlmuerzo, eEmpleado 
     }
 
 }
+
+int almuerzosPorSector(eAlmuerzo almuerzo[], int tamAlmuerzo, eEmpleado emp[], int tam, eComida comidas[], int tamComida, eSector sec[], int tamsec)
+{
+    char auxSector[25];
+    char auxComida[25];
+    int indice;
+
+    for(int i = 0 ; i < tamsec ; i ++)
+    {
+        strcpy(auxSector,sec[i].descripcion);
+        printf("\nComida : %s\n\n", auxSector);
+
+        for(int k = 0; k<tamComida;k++)
+        {
+            strcpy(auxComida,comidas[k].descripcion);
+
+            for(int j = 0 ; j < tamAlmuerzo; j++)
+            {
+                indice=obtenerEmpleado(emp,tamAlmuerzo,almuerzo[j].idEmpleado);
+
+            if(almuerzo[j].idComida==comidas[k].id && sec[i].id == emp[indice].sector && emp[indice].ocupado==1)
+            {
+
+                printf("%10s %10s %10s %7.02d/%02d/%4d \n", emp[indice].nombre,emp[indice].apellido, auxComida, emp[indice].fechaing.dia,emp[indice].fechaing.mes,emp[indice].fechaing.anio);
+            }
+
+            }
+        }
+
+    }
+
+}
+
 
 
 
