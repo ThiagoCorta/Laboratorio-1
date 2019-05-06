@@ -166,6 +166,16 @@ int main()
             system("pause");
             break;
 
+            case 16:
+            almuerzosPorFemenino(almuerzos,TamA,empleados,TAM,comidas,TAMC,sectores,tamSec);
+            system("pause");
+            break;
+
+            case 17:
+            comidaFavPorSec(almuerzos,TamA,empleados,TAM,comidas,TAMC,sectores,tamSec);
+            system("pause");
+            break;
+
         }
     }while(seguir=='s');
 
@@ -477,7 +487,7 @@ int empleadosPorComidasYnombre(eAlmuerzo almuerzo[], int tamAlmuerzo, eEmpleado 
             if(almuerzo[j].idComida==comidas[i].id)
             {
                 indice=obtenerEmpleado(emp,tamAlmuerzo,almuerzo[j].idEmpleado);
-                printf("%s %s\n", emp[indice].nombre,emp[indice].apellido);
+                printf("Empleado > %10s %10s > Sexo :  %c\n", emp[indice].nombre,emp[indice].apellido, emp[indice].sexo);
             }
 
         }
@@ -494,7 +504,7 @@ int almuerzosPorSector(eAlmuerzo almuerzo[], int tamAlmuerzo, eEmpleado emp[], i
     for(int i = 0 ; i < tamsec ; i ++)
     {
         strcpy(auxSector,sec[i].descripcion);
-        printf("\nComida : %s\n\n", auxSector);
+        printf("\nSector: : %s\n\n", auxSector);
 
         for(int k = 0; k<tamComida;k++)
         {
@@ -517,8 +527,88 @@ int almuerzosPorSector(eAlmuerzo almuerzo[], int tamAlmuerzo, eEmpleado emp[], i
 
 }
 
+int almuerzosPorFemenino(eAlmuerzo almuerzo[], int tamAlmuerzo, eEmpleado emp[], int tam, eComida comidas[], int tamComida, eSector sec[], int tamsec)
+{
+    char auxComida[25];
+    int indice;
+
+    for(int i = 0 ; i < tamComida ; i ++)
+    {
+        strcpy(auxComida,comidas[i].descripcion);
+        printf("\nComida : %s\n\n", auxComida);
+
+        for(int j = 0 ; j < tamAlmuerzo; j++)
+        {
+            indice=obtenerEmpleado(emp,tamAlmuerzo,almuerzo[j].idEmpleado);
+            if(almuerzo[j].idComida==comidas[i].id && emp[indice].sexo=='f')
+            {
+                printf("Empleado > %10s %10s > Sexo :  %c\n", emp[indice].nombre,emp[indice].apellido, emp[indice].sexo);
+
+            }
+
+        }
+    }
+
+}
+
+int comidaFavPorSec(eAlmuerzo almuerzo[], int tamAlmuerzo, eEmpleado emp[], int tam, eComida comidas[], int tamComida, eSector sec[], int tamsec)
+{
+    char auxSector[25];
+    char auxComida[25];
+    int mayor;
+    int flag =0;
+    int indice;
+
+    for(int i = 0 ; i < tamsec ; i ++)
+    {
+        strcpy(auxSector,sec[i].descripcion);
+        printf("\nSector: : %s\n\n", auxSector);
+
+        for(int k = 0; k<tamComida;k++)
+        {
+            calcularComidaMasPopular(comidas,tamComida,almuerzo,tamAlmuerzo,auxComida);
+
+            printf("La comida mas popular por sector es : %s", auxComida);
+        }
+
+    }
+
+}
+
+int calcularComidaMasPopular(eComida* com, int lenC, eAlmuerzo* almuerzo, int lenAlmuerzo, char* aux, eSector* sec, int tamsec)
+{
+    int flag = 0;
+    int mayor[tamsec];
+    int todoOk = -1;
+
+    for(int i = 0 ; i < tamsec ; i ++)
+    {
+        mayor[i]=0;
+
+        for(int j = 0 ; j < lenAlmuerzo ; j++)
+        {
+            if(almuerzo[j].idComida == com[i].id)
+            {
+                mayor[i]++;
+            }
+
+        }
+
+    }
 
 
+    for(int i = 0 ; i < lenC ; i++)
+    {
+        if(flag == 0 || mayor[i] > mayor[i+1])
+        {
+            strcpy(*aux,com[i].descripcion);
+            flag=1;
+            todoOk=0;
+        }
+    }
 
+    return todoOk;
+
+}
 
 

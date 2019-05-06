@@ -95,7 +95,7 @@ void mostrarEmpleado(eEmpleado emp, eSector sectores [], int tam)
 
     //obtenerSectores(sectores,tam,emp.sector,nombreSector);
 
-    printf("%5d %12s %12s %10c %10.2f %7.02d/%02d/%4d %15s \n", emp.legajo, emp.nombre,emp.apellido,emp.sexo,emp.sueldo, emp.fechaing.dia,emp.fechaing.mes,emp.fechaing.anio,nombreSector);
+    printf("%5d %10s %12s %10c %10.2f %7.02d/%02d/%4d %10s \n", emp.legajo, emp.nombre,emp.apellido,emp.sexo,emp.sueldo, emp.fechaing.dia,emp.fechaing.mes,emp.fechaing.anio,nombreSector);
 
 }
 
@@ -105,8 +105,8 @@ void mostrarEmpleados(eEmpleado empleados[], int tam, eSector sectores[], int ta
 
     system("cls");
     printf("\n");
-    printf("%5s %12s %12s %10s %9s %15s %15s \n", "Legajo", "Nombre", "Apellido", "Sexo", "Salario","FechaIngreso","Sector");
-    printf("%5s %12s %12s %10s %9s %15s %15s \n", "------", "------", "--------", "----", "-------","------------","------");
+    printf("%5s %10s %12s %10s %9s %15s %10s \n", "Legajo", "Nombre", "Apellido", "Sexo", "Salario","FechaIngreso","Sector");
+    printf("%5s %10s %12s %10s %9s %15s %10s \n", "------", "------", "--------", "----", "-------","------------","------");
 
     for(int i = 0 ; i < tam ; i++)
     {
@@ -580,7 +580,7 @@ void hardCodearEmpleados(eEmpleado vec[], int tam)
     {5657, "camila", "celano", 'f', 3 , 18000,{12,3,2000},1},
     {9874, "federico", "callejeros", 'm', 2 , 19000,{12,3,2000},1},
     {1358, "nerea", "pereyra", 'f', 5 , 25000,{12,3,2000},1},
-    {9999, "matias", "hamie", 'f', 5 , 30000,{12,3,2000},1},
+    {9999, "matias", "hamie", 'm', 5 , 30000,{12,3,2000},1},
     {1564, "dani", "class", 'm', 1 , 44000,{12,3,2000},1},
     {1954, "sabrina", "nosee", 'f', 1 , 14000,{12,3,2000},1},
     {1564, "victoria", "sanchez", 'f', 3 , 28000,{12,3,2000},1},
