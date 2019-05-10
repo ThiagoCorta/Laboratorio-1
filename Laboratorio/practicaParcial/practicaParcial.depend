@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1557479937 source:c:\users\thiag\desktop\practicaparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	<string.h>
+	<conio.h>
+	"Autores.h"
+	"libros.h"
+	"socios.h"
+	<ctype.h>
+	"prestamos.h"
+
+1557479718 c:\users\thiag\desktop\practicaparcial\utn.h
+
+1557479718 source:c:\users\thiag\desktop\practicaparcial\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn.h"
+
+1557478246 c:\users\thiag\desktop\practicaparcial\autores.h
+
+1557479718 source:c:\users\thiag\desktop\practicaparcial\autores.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	<string.h>
+	<conio.h>
+	"Autores.h"
+	"libros.h"
+	"socios.h"
+	<ctype.h>
+	"prestamos.h"
+
+1557478074 c:\users\thiag\desktop\practicaparcial\libros.h
+
+1557479110 source:c:\users\thiag\desktop\practicaparcial\libros.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	<string.h>
+	<conio.h>
+	"Autores.h"
+	"libros.h"
+	"socios.h"
+	<ctype.h>
+	"prestamos.h"
+
+1557477898 c:\users\thiag\desktop\practicaparcial\socios.h
+
+1557479110 source:c:\users\thiag\desktop\practicaparcial\socios.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	<string.h>
+	<conio.h>
+	"Autores.h"
+	"libros.h"
+	"socios.h"
+	<ctype.h>
+	"prestamos.h"
+
+1557479865 source:c:\users\thiag\desktop\practicaparcial\prestamos.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	<string.h>
+	<conio.h>
+	"Autores.h"
+	"libros.h"
+	"socios.h"
+	<ctype.h>
+	"prestamos.h"
+
+1557479997 c:\users\thiag\desktop\practicaparcial\prestamos.h
+
