@@ -1,0 +1,44 @@
+# depslib dependency file v1.0
+1557533122 source:c:\users\alumno\desktop\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn.h"
+	"auto.h"
+	"trabajos.h"
+
+1557533320 c:\users\alumno\desktop\parcial\utn.h
+
+1557532131 c:\users\alumno\desktop\parcial\auto.h
+
+1557533122 source:c:\users\alumno\desktop\parcial\auto.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn.h"
+	"auto.h"
+
+1557531489 source:c:\users\alumno\desktop\parcial\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn.h"
+
+1557531489 c:\users\alumno\desktop\parcial\trabajos.h
+
+1557532488 source:c:\users\alumno\desktop\parcial\trabajos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn.h"
+	"auto.h"
+	"trabajos.h"
+
