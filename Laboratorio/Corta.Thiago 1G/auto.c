@@ -30,17 +30,19 @@ int findEmptyAuto(eAuto* list, int len)
     return indice;
 }
 
-int findAutoById(eAuto* list, int len, int id)
+int findAutoByPatente(eAuto* list, int len, char* patente)
 {
-    int esta = -1;
 
-    for(int i = 0 ; i < len ; i++)
-    {
-        if(list[i].idAuto==id)
+        int esta = -1;
+
+        for(int i = 0 ; i < len ; i++)
         {
-            esta=i;
+            if(strcmp(list[i].patente,patente)==0 && list[i].isEmpty==1)
+            {
+                esta=i;
+            }
         }
-    }
+
 
     return esta;
 
@@ -56,9 +58,11 @@ int getIdAuto()
 
 int addAuto(eAuto* list, int len, eMarca* marcas, int lenM, eColor* colores, int lenC)
 {
-    int indice;
+    int indice=-1;
     int todoOk=-1;
     int auxInt;
+    char numP[4];
+    char patente[7];
 
 
     indice=findEmptyAuto(list,len);
@@ -67,8 +71,16 @@ int addAuto(eAuto* list, int len, eMarca* marcas, int lenM, eColor* colores, int
     {
         list[indice].idAuto = getIdAuto();
 
-        utn_getEntero(&auxInt,20,"Ingresar patente del auto (3) numeros  : \n", "Error ingresar patente Valida \n",0,999);
-        list[indice].patente=auxInt;
+        utn_getCadena(patente,4,20,"Ingresar las primeras 3 letras de la patente\n", "Error ingresar las primeras 3 letras\n");
+        while(strlen(patente)!=3)
+        utn_getCadena(patente,4,20,"Ingresar las primeras 3 letras de la patente\n", "Error ingresar las primeras 3 letras\n");
+
+        utn_getEntero(&auxInt,20,"Ingresar 3 numeros de la patente : \n", "Error ingresar 3 numeros Validos \n",0,999);
+        sprintf(numP, "%d", auxInt);
+        Tstrupr(patente);
+        strcat(patente,numP);
+
+        strcpy(list[indice].patente,patente);
 
         mostrarModelos(marcas,lenM);
         utn_getEntero(&auxInt,20,"Ingresar Marca : \n", "Error ingresar marca valida \n",1000,1004);
@@ -117,12 +129,17 @@ char preguntarSiEstaSeguro(char* msg, char* msgerror)
     return confirma;
 }
 
-int removeAuto(eAuto* list, int len, int id)
+int removeAuto(eAuto* list, int len)
 {
     int todoOk = -1;
-    int esta;
+    int esta=-1;
+    char patente[20];
 
-    esta = findAutoById(list,len,id);
+    printf("\n\nIngrese La patente del auto que desea dar de baja:\n ");
+    getCadena(patente,7);
+    Tstrupr(patente);
+
+    esta = findAutoByPatente(list,len,patente);
 
     if(esta!=-1)
     {
@@ -167,7 +184,7 @@ void printAuto(eAuto list, eColor* color,int lenc,eMarca* marcas, int lenM)
         strcpy(nombreMarca, "Sin definir");
     }
 
-    printf("%5d %12s %12s %10d %10d \n", list.idAuto, nombreMarca,nombreColor,list.modeloAnio,list.patente);
+    printf("%5d %12s %12s %10d %10s\n", list.idAuto, nombreMarca,nombreColor,list.modeloAnio,list.patente);
 }
 
 
@@ -177,7 +194,7 @@ void printAutos(eAuto* list, int len, eMarca* marca, int lenM, eColor* color, in
 
     system("cls");
     printf("\n");
-    printf("%5s %12s %12s %10s %10s  \n", "IDAuto", "Marca", "Color", "Modelo", "Patente");
+    printf("%5s %11s %12s %10s %10s\n","IDAuto","Marca","Color","Modelo","Patente");
 
     for(int i = 0 ; i < len ; i++)
     {
@@ -212,24 +229,25 @@ int menuModificar()
 int modifyAuto(eAuto* list, int len, eColor* color, int lenc, eMarca* marcas, int lenM)
 {
 
-    int id;
-    int esta;
+    int esta=-1;
     int auxInt;
     char seguir='s';
+    char patente[500];
     int todoOk=-1;
 
 
     printAutos(list,len,marcas,lenM,color,lenc);
 
-    printf("\n\nIngrese el ID del auto que desea modificar:\n ");
-    scanf("%d", &id);
+    printf("\n\nIngrese La patente del auto que desea modificar:\n ");
+    getCadena(patente,7);
+    Tstrupr(patente);
 
-    esta = findAutoById(list, len, id);
+    esta = findAutoByPatente(list, len, patente);
 
     if( esta == -1)
     {
 
-        printf("\nEl Auto con id %d no esta registrado en el sistema\n", id);
+        printf("\nEl Auto con patente %s no esta registrado en el sistema\n", patente);
     }
     else
     {
@@ -295,7 +313,8 @@ int menuAbm()
     printf(" 7- listar servicios: \n");
     printf(" 8- Alta trabajo: \n");
     printf(" 9- listar trabajos: \n");
-    printf(" 10- Salir:");
+    printf(" 10- Consultas:\n");
+    printf(" 11- Salir:");
     printf("\n\n Ingresar opcion : ");
 
     scanf("%d", &opcion);
@@ -385,7 +404,7 @@ void sortAutos(eAuto* list, int len)
     {
         for(int j=i+1; j<len; j++)
         {
-            if(list[i].idMarca<list[j].idMarca)
+            if(list[i].idMarca>list[j].idMarca)
                 {
                     autos=list[i];
                     list[i]=list[j];
@@ -393,7 +412,7 @@ void sortAutos(eAuto* list, int len)
                 }
                else
                 {
-                    if(list[i].idMarca==list[j].idMarca && list[i].patente > list[i].patente)
+                    if(list[i].idMarca==list[j].idMarca && strcmp(list[i].patente,list[i].patente)==1)
                     {
                     autos=list[i];
                     list[i]=list[j];
@@ -420,3 +439,33 @@ int findArrayAuto(eAuto* autos, int lenA)
     return esta;
 }
 
+void Tstrupr(char* cadena)
+{
+    for(int i = 0 ; i < strlen(cadena);i++)
+    {
+        cadena[i]=toupper(cadena[i]);
+    }
+}
+
+
+void hardCodearAutos(eAuto* autos, int tam)
+{
+    eAuto autoss [13]= {
+    {200, 1000, 5000, 2012, 1 , "AWP141"},
+    {201, 1001, 5001, 2017, 1 , "ABP252"},
+    {202, 1002, 5002, 1999, 1 , "ASS303"},
+    {203, 1003, 5003, 2018, 1 , "AFN494"},
+    {204, 1004, 5004, 2019, 1 , "AQA585"},
+    {205, 1002, 5000, 2011, 1 , "ARR676"},
+    {206, 1003, 5002, 2014, 1 , "AWQ767"},
+    {207, 1000, 5003, 2015, 1 , "PAW848"},
+    {208, 1004, 5004, 2019, 1 , "NAD949"},
+    {209, 1001, 5000, 2017, 1 , "QAF030"},
+    {210, 1004, 5004, 2014, 1 , "LDA521"},
+    {211, 1003, 5003, 2015, 1 , "LAA616"}};
+    for(int i=0;i<tam;i++)
+    {
+        autos[i]= autoss[i];
+    }
+
+}

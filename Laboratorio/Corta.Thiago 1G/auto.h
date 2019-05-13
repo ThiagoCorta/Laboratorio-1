@@ -17,11 +17,12 @@ typedef struct{
 
 typedef struct{
 int idAuto;
-int patente;
 int idMarca;
 int idColor;
 int modeloAnio;
 int isEmpty;
+char patente[7];
+
 }eAuto;
 
 typedef struct{
@@ -35,11 +36,11 @@ int precioServicio;
 
 void initAutos(eAuto* list, int len);
 int findEmptyAuto(eAuto* list, int len);
-int findAutoById(eAuto* list, int len, int id);
+int findAutoByPatente(eAuto* list, int len, char* patente);
 int getIdAuto();
 int addAuto(eAuto* list, int len, eMarca* marcas, int lenM, eColor* colores, int lenC);
 char preguntarSiEstaSeguro(char* msg, char* msgerror);
-int removeAuto(eAuto* list, int len, int id);
+int removeAuto(eAuto* list, int len);
 void printAuto(eAuto list, eColor* color,int lenc,eMarca* marcas, int lenM);
 void printAutos(eAuto* list, int len, eMarca* marca, int lenM, eColor* color, int lenC);
 int menuModificar();
@@ -54,3 +55,5 @@ void sortAutos(eAuto* list, int len);
 int findServicioById(eServicio* servicio, int lenS, int idServicio);
 int findArrayAuto(eAuto* autos, int lenA);
 int menuAbm();
+void Tstrupr(char* cadena);
+void hardCodearAutos(eAuto* autos, int tam);

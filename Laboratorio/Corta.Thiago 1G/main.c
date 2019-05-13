@@ -16,8 +16,7 @@
 
 int main()
 {
-    char seguir='s';
-    int auxInt;
+   char seguir='s';
     int flagA=0;
     int flagT=0;
     eAuto autos[TAMA];
@@ -34,6 +33,8 @@ int main()
 
     initAutos(autos,TAMA);
     initTrabajos(trabajos,TAMT);
+    hardCodearAutos(autos,13);
+    hardCodearTrabajos(trabajos,13);
 
     do{
 
@@ -67,8 +68,7 @@ int main()
                 if(validateFlag(&flagA,"\nPara poder dar de baja autos primero hay que ingresarlos.\n")==0)
                 {
                     printAutos(autos,TAMA,marcas,tamM,colores,TAMC);
-                    utn_getEntero(&auxInt,20,"Ingresar ID del Auto que quiere dar de baja : \n", "\n Error ingresar auto valido\n",0,1000);
-                    removeAuto(autos,TAMA,auxInt);
+                    removeAuto(autos,TAMA);
                     system("pause");
                 }
                 break;
@@ -114,12 +114,16 @@ int main()
             case 9:
                 if(validateFlag(&flagT,"\nPara poder mostrar trabajos primero hay que ingresarlos.\n")==0)
                 {
-                    printTrabajos(trabajos,TAMT,servicios,TamS);
+                    printTrabajos(trabajos,TAMT,servicios,TamS,autos,TAMA,marcas,tamM);
                     system("pause");
                 }
 
                 break;
             case 10:
+                funcConsultas(autos,TAMA,trabajos,TAMT,servicios,TamS,colores,TAMC,marcas,tamM);
+                break;
+
+            case 11:
                 seguir='n';
                 break;
 
@@ -131,8 +135,8 @@ int main()
 
     }while(seguir=='s');
 
+    return 0;
+
 
 }
-
-
 
