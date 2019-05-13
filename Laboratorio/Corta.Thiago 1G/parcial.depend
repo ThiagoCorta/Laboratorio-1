@@ -42,7 +42,7 @@
 	"auto.h"
 	"trabajos.h"
 
-1557733566 source:c:\users\thiag\desktop\corta.thiago 1g\auto.c
+1557775969 source:c:\users\thiag\desktop\corta.thiago 1g\auto.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -53,7 +53,7 @@
 
 1557533529 c:\users\thiag\desktop\corta.thiago 1g\utn.h
 
-1557729903 c:\users\thiag\desktop\corta.thiago 1g\auto.h
+1557776027 c:\users\thiag\desktop\corta.thiago 1g\auto.h
 
 1557733638 source:c:\users\thiag\desktop\corta.thiago 1g\main.c
 	<stdio.h>
@@ -65,9 +65,9 @@
 	"auto.h"
 	"trabajos.h"
 
-1557733685 c:\users\thiag\desktop\corta.thiago 1g\trabajos.h
+1557776324 c:\users\thiag\desktop\corta.thiago 1g\trabajos.h
 
-1557733638 source:c:\users\thiag\desktop\corta.thiago 1g\trabajos.c
+1557776791 source:c:\users\thiag\desktop\corta.thiago 1g\trabajos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
