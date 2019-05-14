@@ -85,3 +85,59 @@
 	<ctype.h>
 	"utn.h"
 
+1557791579 source:c:\users\alumno\desktop\corta.thiago 1g\auto.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn.h"
+	"auto.h"
+
+1557783305 c:\users\alumno\desktop\corta.thiago 1g\utn.h
+
+1557785769 c:\users\alumno\desktop\corta.thiago 1g\auto.h
+
+1557791759 source:c:\users\alumno\desktop\corta.thiago 1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn.h"
+	"auto.h"
+	"trabajos.h"
+
+1557783305 c:\users\alumno\desktop\corta.thiago 1g\trabajos.h
+
+1557791579 source:c:\users\alumno\desktop\corta.thiago 1g\trabajos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn.h"
+	"auto.h"
+	"trabajos.h"
+
+1557783305 source:c:\users\alumno\desktop\corta.thiago 1g\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn.h"
+
+1557791304 source:c:\users\alumno\desktop\corta.thiago 1g\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn.h"
+	"auto.h"
+	"trabajos.h"
+	"informes.h"
+
+1557785361 c:\users\alumno\desktop\corta.thiago 1g\informes.h
+

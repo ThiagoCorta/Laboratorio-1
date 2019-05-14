@@ -191,242 +191,48 @@ int findArrayTrabajo(eTrabajo* list, int lent)
 
 void hardCodearTrabajos(eTrabajo* works, int tam)
 {
-    eTrabajo workss [13]= {
-    {50,"AWP141",20000 ,{12,3,2000},1},
-    {51,"ABP252",20001 ,{13,3,2000},1},
-    {52,"ASS303",20002 ,{14,3,2000},1},
-    {53,"AFN494",20003 ,{15,3,2000},1},
-    {54,"AQA585",20000 ,{12,3,2000},1},
-    {55,"ARR676",20001 ,{13,3,2000},1},
-    {56,"AWQ767",20002 ,{14,3,2000},1},
-    {57,"PAW848",20003 ,{15,3,2000},1},
-    {58,"NAD949",20000 ,{12,3,2000},1},
-    {59,"QAF030",20001 ,{13,3,2000},1},
-    {60,"LDA521",20002 ,{14,3,2000},1},
-    {61,"LAA616",20003 ,{15,3,2000},1}};
+    eTrabajo workss [36]= {
+     {1, "AAA201", 20000, {12,3,2019}, 1},
+       {2, "DFR234", 20000, {2,4,2019}, 1},
+       {3, "GFT564", 20001, {7,1,2019}, 1},
+       {4, "ACD321", 20002, {9,11,2019}, 1},
+       {5, "HTD656", 20003, {12,12,2019}, 1},
+       {6, "QSZ435", 20001, {21,7,2019}, 1},
+       {7, "LGX201", 20001, {29,8,2019}, 1},
+       {8, "SUZ324", 20004, {31,5,2019}, 1},
+       {9, "HCU762", 20004, {2,2,2019}, 1},
+       {10, "DYC735", 20000, {18,2,2019}, 1},
+       {11, "JJK879", 20001, {17,3,2019}, 1},
+       {12, "AAA201", 20000, {17,4,2019}, 1},
+       {13, "DFR234", 20000, {2,6,2019}, 1},
+       {14, "GFT564", 20001, {7,3,2019}, 1},
+       {15, "ACD321", 20002, {21,7,2019}, 1},
+       {16, "HTD656", 20003, {11,9,2019}, 1},
+       {17, "QSZ435", 20001, {3,7,2019}, 1},
+       {18, "LGX201", 20001, {21,8,2019}, 1},
+       {19, "SUZ324", 20004, {28,5,2019}, 1},
+       {20, "HCU762", 20004, {2,8,2019}, 1},
+       {21, "DYC735", 20000, {8,2,2019}, 1},
+       {22, "JJK879", 20001, {17,3,2019}, 1},
+       {23, "KOD220", 20003, {17,4,2019}, 1},
+       {24, "QSZ305", 20000, {21,3,2019}, 1},
+       {25, "SSD128", 20002, {16,4,2019}, 1},
+       {26, "SSD240", 20000, {17,4,2019}, 1},
+       {27, "EDF213", 20001, {23,3,2019}, 1},
+       {28, "AAA201", 20000, {12,2,2019}, 1},
+       {29, "DFR234", 20000, {2,3,2019}, 1},
+       {30, "GFT564", 20001, {7,2,2019}, 1},
+       {31, "ACD321", 20002, {9,12,2019}, 1},
+       {32, "HTD656", 20003, {12,9,2019}, 1},
+       {33, "QSZ435", 20001, {21,5,2019}, 1},
+       {34, "HTD656", 20002, {12,2,2019}, 1},
+       {35, "QSZ435", 20000, {21,1,2019}, 1}};
     for(int i=0;i<tam;i++)
     {
         works[i]= workss[i];
     }
 
 }
-
-int menuAbmConsultas()
-{
-    int opcion;
-    system("cls");
-    fflush(stdin);
-
-    printf("|**************MENU ABM CONSULTAS**************|\n");
-    printf("\n 1- Servicios Por Marcas;\n");
-    printf(" 2- Servicio mas popular:\n");
-    printf(" 3- busqueda por anio:\n");
-    printf(" 4- : \n");
-    printf(" 5- : \n");
-    printf(" 6- : \n");
-    printf(" 7- : \n");
-    printf(" 8- : \n");
-    printf(" 9- Salir: \n");
-    printf("\n\n Ingresar opcion : ");
-
-    scanf("%d", &opcion);
-
-return opcion;
-}
-
-void trabajosPorServicios(eAuto* autos,int lenA,eTrabajo* trabajos, int lenT, eServicio* servicios, int lenS, eColor* colores, int lenC,eMarca* marcas,int lenM)
-{
-    char auxServicio[25];
-    int acumulador[lenS];
-
-    for(int i = 0 ; i < lenS ; i ++)
-    {
-        strcpy(auxServicio,servicios[i].descripcion);
-        printf("\nServicio: : %s\n\n", auxServicio);
-        printf("%5s %11s %12s %10s %10s\n","IDAuto","Marca","Color","Modelo","Patente");
-        acumulador[i]=0;
-
-            for(int j = 0 ; j < lenT; j++)
-            {
-
-                for(int k=0;k<lenA;k++)
-                {
-                    if(trabajos[j].idServicio==servicios[i].idServicio && strcmp(trabajos[j].patente,autos[k].patente)==0)
-                    {
-                        printAuto(autos[k],colores,lenC,marcas,lenM);
-                        acumulador[i]+=servicios[i].precioServicio;
-
-                    }
-
-
-                }
-
-            }
-        printf("Este servicio genero $ %d\n",acumulador[i]);
-
-    }
-}
-void funcConsultas(eAuto* autos,int lenA,eTrabajo* trabajos,int lenT,eServicio* servicios,int lenS,eColor* colores,int lenC,eMarca*marcas,int lenM)
-{
-    char seguir='s';
-
-    do
-    {
-
-        switch(menuAbmConsultas())
-        {
-            case 1:
-                trabajosPorServicios(autos,lenA,trabajos,lenT,servicios,lenS,colores,lenC,marcas,lenM);
-                system("pause");
-                break;
-            case 2:
-                servicioMasPopular(autos,lenA,trabajos,lenT,servicios,lenS,colores,lenC,marcas,lenM);
-                system("pause");
-                break;
-            case 3:
-                acumuladorAnual(autos,lenA,trabajos,lenT,servicios,lenS,colores,lenC,marcas,lenM);
-                system("pause");
-
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
-            case 8:
-                break;
-            case 9:
-                seguir='n';
-
-                break;
-        }
-
-    }while(seguir=='s');
-}
-
-
-void servicioMasPopular(eAuto* autos,int lenA,eTrabajo* trabajos, int lenT, eServicio* servicios, int lenS, eColor* colores, int lenC,eMarca* marcas,int lenM)
-{
-    char auxServicio[25];
-    int acumulador[lenS];
-    int contador[lenS];
-    int mayor;
-
-    for(int i = 0 ; i < lenS ; i ++)
-    {
-        strcpy(auxServicio,servicios[i].descripcion);
-        printf("\nServicio: : %s\n\n", auxServicio);
-        printf("%5s %12s %12s %12s %15s %13s\n", "IDT", "Patente","Marca", "Servicio","Fecha", "Precio");
-        acumulador[i]=0;
-        contador[i]=0;
-
-
-            for(int j = 0 ; j < lenT; j++)
-            {
-
-                for(int k=0;k<lenA;k++)
-                {
-                    if(trabajos[j].idServicio==servicios[i].idServicio && strcmp(trabajos[j].patente,autos[k].patente)==0)
-                    {
-                        printTrabajo(trabajos[k],servicios,lenS,autos,lenA,marcas,lenM);
-                        acumulador[i]+=servicios[i].precioServicio;
-                        contador[i]++;
-
-                    }
-
-
-                }
-
-            }
-        printf("Este servicio genero $ %d\n",acumulador[i]);
-        printf("Este servicio fue contratado %d veces.\n\n", contador[i]);
-    }
-
-    for(int i = 0; i< lenS;i++)
-    {
-        if(i == 0 || contador[i]>contador[i+1])
-        {
-            mayor=contador[i];
-        }
-    }
-
-    for(int i = 0 ; i < lenS;i++)
-    {
-        if( contador[i] >= mayor){
-
-            printf("El servicio mas popular es : %s\n", servicios[i].descripcion);
-        }
-
-    }
-
-}
-
-
-
-void acumuladorAnual(eAuto* autos,int lenA,eTrabajo* trabajos, int lenT, eServicio* servicios, int lenS, eColor* colores, int lenC,eMarca* marcas,int lenM)
-{
-    char auxServicio[25];
-    int acumulador[lenS];
-    int contador[lenS];
-    int mayor;
-    int anio;
-
-    printf("Ingresar anio : ");
-    getInt(&anio);
-
-    for(int i = 0 ; i < lenS ; i ++)
-    {
-        strcpy(auxServicio,servicios[i].descripcion);
-        printf("\nServicio: : %s\n\n", auxServicio);
-        printf("%5s %12s %12s %12s %15s %13s\n", "IDT", "Patente","Marca", "Servicio","Fecha", "Precio");
-        acumulador[i]=0;
-        contador[i]=0;
-
-
-            for(int j = 0 ; j < lenT; j++)
-            {
-
-                for(int k=0;k<lenA;k++)
-                {
-                    if(trabajos[j].idServicio==servicios[i].idServicio && strcmp(trabajos[j].patente,autos[k].patente)==0 && anio==trabajos[j].fechaIng.anio && trabajos[j].isEmpty==1)
-                    {
-                        printTrabajo(trabajos[j],servicios,lenS,autos,lenA,marcas,lenM);
-                        acumulador[i]+=servicios[i].precioServicio;
-                        contador[i]++;
-
-                    }
-
-
-                }
-
-            }
-        printf("Este servicio genero $ %d\n",acumulador[i]);
-        printf("Este servicio fue contratado %d veces.\n\n", contador[i]);
-    }
-
-    for(int i = 0; i< lenS;i++)
-    {
-        if(i == 0 || contador[i]>contador[i+1])
-        {
-            mayor=contador[i];
-        }
-    }
-
-    for(int i = 0 ; i < lenS;i++)
-    {
-        if( contador[i] >= mayor && contador[i]!=0){
-
-            printf("El servicio mas popular es : %s\n", servicios[i].descripcion);
-        }
-
-    }
-
-
-}
-
 
 
 

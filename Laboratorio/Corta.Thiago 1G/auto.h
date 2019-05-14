@@ -17,11 +17,12 @@ typedef struct{
 
 typedef struct{
 int idAuto;
+char patente[7];
 int idMarca;
 int idColor;
 int modeloAnio;
 int isEmpty;
-char patente[7];
+
 
 }eAuto;
 

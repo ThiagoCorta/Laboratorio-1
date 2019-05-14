@@ -8,12 +8,12 @@
 #include "trabajos.h"
 
 #define TAMC 5
-#define TamS 4
+#define TamS 5
 #define tamM 5
 #define TAMA 1000
 #define TAMT 1000
 
-
+//17/04/2019
 int main()
 {
    char seguir='s';
@@ -23,18 +23,20 @@ int main()
     eTrabajo trabajos[TAMT];
     eMarca marcas[tamM]= {{1000,"Renault"},{1001,"Fiat"},{1002,"Ford"},{1003,"Chevrolet"},{1004,"Peugeot"}};
     eColor colores[TAMC]= {{5000,"Negro"},{5001,"Blanco"},{5002,"Gris"},{5003,"Rojo"},{5004,"Azul"}};
-    eServicio servicios[TamS]={
-                {20000,"Lavado",250},
-                {20001,"Pulido",300},
-                {20002,"Encerado",400},
-                {20003,"Completo",600}};
+    eServicio servicios[TamS] ={
+       {20000, "Lavado", 250},
+       {20001, "Pulido", 300},
+       {20002, "Encerado", 400},
+       {20003, "Completo", 600},
+       {20004, "Teflonado", 800}
+       };
 
 
 
     initAutos(autos,TAMA);
     initTrabajos(trabajos,TAMT);
-    hardCodearAutos(autos,13);
-    hardCodearTrabajos(trabajos,13);
+    hardCodearAutos(autos,23);
+    hardCodearTrabajos(trabajos,36);
 
     do{
 
@@ -139,4 +141,210 @@ int main()
 
 
 }
+
+void servicioMasPopular(eAuto* autos,int lenA,eTrabajo* trabajos, int lenT, eServicio* servicios, int lenS, eColor* colores, int lenC,eMarca* marcas,int lenM)
+{
+
+    int acumulador[lenS];
+    int contador[lenS];
+    int mayor;
+    int flag=0;
+
+    for(int i = 0 ; i < lenS ; i ++)
+    {
+        acumulador[i]=0;
+        contador[i]=0;
+
+            for(int j = 0 ; j < lenT; j++)
+            {
+
+                for(int k=0;k<lenA;k++)
+                {
+                    if(trabajos[j].idServicio==servicios[i].idServicio && strcmp(trabajos[j].patente,autos[k].patente)==0)
+                    {
+                       // printTrabajo(trabajos[k],servicios,lenS,autos,lenA,marcas,lenM);
+                        acumulador[i]+=servicios[i].precioServicio;
+                        contador[i]++;
+
+                    }
+
+
+                }
+
+            }
+       // printf("Este servicio fue contratado %d veces.\n\n", contador[i]);
+    }
+
+    for(int i = 0; i< lenS;i++)
+    {
+        for(int j = i+1; i< lenS;i++)
+        {
+            if(flag == 0 || contador[i]>contador[j])
+            {
+                mayor=contador[i];
+                flag=1;
+            }
+            else
+            {
+                if(contador[i]<contador[j])
+                {
+                    mayor=contador[j];
+                }
+
+            }
+        }
+
+    }
+
+    for(int i = 0 ; i < lenS;i++)
+    {
+        if( contador[i] >= mayor){
+
+            printf("El servicio mas popular es : %s con %d trabajos\n", servicios[i].descripcion,contador[i]);
+        }
+
+    }
+
+}
+
+
+void autosPorTrabajo(eAuto* autos,int lenA,eTrabajo* trabajos, int lenT, eServicio* servicios, int lenS, eColor* colores, int lenC,eMarca* marcas,int lenM)
+{
+
+    int auxInt;
+
+    mostrarServicios(servicios,lenS);
+            utn_getEntero(&auxInt,20,"Ingresar servicio que desea contratar : \n", "Error ingresar servicio valido \n",20000,20004);
+
+    printf("%5s %12s %12s %12s %15s %13s\n", "IDT", "Patente","Marca", "Servicio","Fecha", "Precio");
+    for(int i=0;i<lenT;i++)
+        {
+            if(trabajos[i].idServicio==auxInt && trabajos[i].isEmpty==1)
+            {
+                printTrabajo(trabajos[i],servicios,lenS,autos,lenA,marcas,lenM);
+
+            }
+
+        }
+
+}
+
+
+void recaudacionPorFecha(eAuto* autos,int lenA,eTrabajo* trabajos, int lenT, eServicio* servicios, int lenS, eColor* colores, int lenC,eMarca* marcas,int lenM)
+{
+    int acumulador=0;
+    int dia;
+    int mes;
+    int anio;
+
+
+    pedirFecha(&dia,&mes,&anio);
+
+
+    for(int i = 0 ; i < lenS ; i ++)
+        {
+
+            for(int j = 0 ; j < lenT; j++)
+            {
+
+                if(trabajos[j].idServicio==servicios[i].idServicio && trabajos[j].fechaIng.dia==dia &&trabajos[j].fechaIng.mes == mes&&trabajos[j].fechaIng.anio==anio && trabajos[j].isEmpty==1)
+                    {
+                        printTrabajo(trabajos[j],servicios,lenS,autos,lenA,marcas,lenM);
+                        acumulador+=servicios[i].precioServicio;
+
+                    }
+
+                }
+
+            }
+    printf("Este dia se facturo : %d\n\n", acumulador);
+}
+
+void trabajosAutosColor(eAuto* autos,int lenA,eTrabajo* trabajos, int lenT, eServicio* servicios, int lenS, eColor* colores, int lenC,eMarca* marcas,int lenM)
+{
+    int auxInt;
+
+
+    mostrarColores(colores,lenC);
+
+        utn_getEntero(&auxInt,20,"Ingresar color del auto : \n", "Error ingresar color Valida \n",5000,5004);
+
+    printf("%5s %11s %12s %10s %10s\n\n","IDAuto","Marca","Color","Modelo","Patente");
+
+    for(int i = 0 ; i < lenT ; i++)
+    {
+        for(int j=0;j<lenA;j++)
+        {
+            if(strcmp(trabajos[i].patente,autos[i].patente) && autos[j].idColor==auxInt&&trabajos[i].isEmpty==1)
+            {
+                printTrabajo(trabajos[j],servicios,lenS,autos,lenA,marcas,lenM);
+
+            }
+
+        }
+    }
+
+}
+
+void recaudacionPorServicio(eAuto* autos,int lenA,eTrabajo* trabajos, int lenT, eServicio* servicios, int lenS, eColor* colores, int lenC,eMarca* marcas,int lenM)
+{
+    int acumulador=0;
+    int auxInt;
+
+   mostrarServicios(servicios,lenS);
+
+    utn_getEntero(&auxInt,20,"Ingresar servicio que desea contratar : \n", "Error ingresar servicio valido \n",20000,20005);
+
+    printf("%5s %12s %12s %12s %15s %13s\n", "IDT", "Patente","Marca", "Servicio","Fecha", "Precio");
+    for(int i = 0 ; i < lenS ; i ++)
+        {
+
+            for(int j = 0 ; j < lenT; j++)
+            {
+
+                if(trabajos[j].idServicio==servicios[i].idServicio && trabajos[j].idServicio==auxInt && trabajos[j].isEmpty==1)
+                    {
+                        printTrabajo(trabajos[j],servicios,lenS,autos,lenA,marcas,lenM);
+                        acumulador+=servicios[i].precioServicio;
+
+                    }
+
+                }
+
+            }
+    printf("Este dia se facturo : %d\n\n", acumulador);
+}
+
+void autosQueRecibieronTrabajosFecha(eAuto* autos,int lenA,eTrabajo* trabajos, int lenT, eServicio* servicios, int lenS, eColor* colores, int lenC,eMarca* marcas,int lenM)
+{
+    int acumulador=0;
+    int dia;
+    int mes;
+    int anio;
+
+
+    pedirFecha(&dia,&mes,&anio);
+
+    printf("%5s %12s %12s %12s %15s %13s\n", "IDT", "Patente","Marca", "Servicio","Fecha", "Precio");
+    for(int i = 0 ; i < lenS ; i ++)
+        {
+
+            for(int j = 0 ; j < lenT; j++)
+            {
+
+                if(trabajos[j].idServicio==servicios[i].idServicio && trabajos[j].fechaIng.dia==dia &&trabajos[j].fechaIng.mes == mes&&trabajos[j].fechaIng.anio==anio && trabajos[j].isEmpty==1)
+                    {
+                        printTrabajo(trabajos[j],servicios,lenS,autos,lenA,marcas,lenM);
+
+
+                    }
+
+                }
+
+            }
+
+}
+
+
+
 
