@@ -1,0 +1,8 @@
+        ID     NOMBRE   APELLIDO     SUELDO
+      1234      diego      tomas  213214.00
+      4445      hamie     matias   12324.00
+      2144     danieo       clsa    2424.00
+      2134     matias      hamie  213244.00
+      1234      diego      tomas  214324.00
+
+
