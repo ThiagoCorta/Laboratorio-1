@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1559002489 source:c:\users\alumno\desktop\parser\main.c
+	<stdio.h>
+	<stdlib.h>
+
