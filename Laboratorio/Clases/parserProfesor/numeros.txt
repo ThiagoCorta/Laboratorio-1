@@ -1,0 +1,3 @@
+3,Juan,Perez,20000.50
+2,Juna,Gomez,34000.20
+7,Ariel,Gonzalez,45000.70
