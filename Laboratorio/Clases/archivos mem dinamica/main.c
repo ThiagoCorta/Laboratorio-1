@@ -46,7 +46,7 @@ int main()
         {
 
         case 1:
-            cargarEmpleados(lista, size);
+            cargaDesdeBin(&lista,size);
             system("pause");
             break;
         case 2:
@@ -279,21 +279,19 @@ void guardarEmpleadosBinario(eEmpleado** vec, int size)
     }
 }
 
-
+/*
 void cargarEmpleados(eEmpleado** vec, int size)
 {
-    int indice;
     FILE* f;
+    eEmpleado** aux;
     int cant;
 
     f = fopen("./empleados.bin", "rb");
 
     while( !feof(f))
     {
-
-        indice = buscarLibre(vec, size);
-
-        cant = fread( (vec + indice), sizeof(eEmpleado), 1, f);
+        //indice = buscarLibre(vec, size);
+        cant = fread( (vec + size), sizeof(eEmpleado), 1, f);
 
      if( cant < 1){
         if(feof(f)){
@@ -304,10 +302,16 @@ void cargarEmpleados(eEmpleado** vec, int size)
             printf("Problemas para leer el archivo");
         }
        }
+       size++;
+       aux=(eEmpleado**)realloc(vec,sizeof(eEmpleado*)*(size+1));
+                    if(aux!=NULL){
+                        *vec=aux;
+                        printf("Alta exitosa y se agrando el array!!");
+                    }
     }
 
     fclose(f);
-}
+}*/
 
 eEmpleado** agrandarArray(eEmpleado** vec, int size)
 {
@@ -315,5 +319,40 @@ eEmpleado** agrandarArray(eEmpleado** vec, int size)
 
 }
 
+int cargaDesdeBin(eEmpleado** vec, int size){
+    eEmpleado* vec2= *vec;
+    FILE* f;
+    eEmpleado** aux;
+    int cant;
+
+    f = fopen("./empleados.bin", "rb");
+
+    while( !feof(f))
+    {
+        //indice = buscarLibre(vec, size);
+        eEmpleado* unEmpleado = newEmpleado();
+        cant = fread( unEmpleado, sizeof(eEmpleado), 1, f);
+
+     if( cant < 1){
+        if(feof(f)){
+
+            break;
+        }
+        else{
+            printf("Problemas para leer el archivo");
+        }
+       }
+       size++;
+       (*(vec+size)) = unEmpleado;
+       aux=(eEmpleado**)realloc(*vec,sizeof(eEmpleado*)*(size+1));
+                    if(aux!=NULL){
+                        *vec=aux;
+                        printf("Alta exitosa y se agrando el array!!");
+                    }
+    }
+
+    fclose(f);
+
+}
 
 
