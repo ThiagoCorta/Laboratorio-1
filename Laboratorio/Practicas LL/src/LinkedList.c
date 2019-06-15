@@ -212,7 +212,7 @@ int ll_remove(LinkedList* this,int index)
     int returnAux = -1;
     Node* pAuxNode;
     Node* pNode;
-
+/*
 
     if(this!= NULL && index>=0 && index<this->size){
         returnAux=0;
@@ -246,7 +246,23 @@ int ll_remove(LinkedList* this,int index)
             }
         }
     }
-return returnAux;
+return returnAux;*/
+
+    if(this!= NULL && index>=0 && index<this->size){
+        if(index==0){
+            pAuxNode = getNode(this,index);
+            this->pFirstNode=pAuxNode->pNextNode;
+        }else{
+            pAuxNode=getNode(this,index);
+            pNode=getNode(this,index-1);
+            pNode->pNextNode=pAuxNode->pNextNode;
+            free(pAuxNode);
+        }
+        this->size--;
+        returnAux=0;
+    }
+
+    return returnAux;
 }
 
 

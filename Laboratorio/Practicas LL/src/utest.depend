@@ -5149,3 +5149,298 @@
 
 1560491312 c:\users\thiag\desktop\tps 1 cuatri\trabajopractico4\src\parser.h
 
+1560549019 source:c:\users\alumno\desktop\practicas ll\testing\src\addnodetest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\utest.h
+
+1560549018 c:\users\alumno\desktop\practicas ll\inc\linkedlist.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\employee.h
+
+1560549019 source:c:\users\alumno\desktop\practicas ll\testing\src\addtest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549019 source:c:\users\alumno\desktop\practicas ll\testing\src\cleartest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549019 source:c:\users\alumno\desktop\practicas ll\testing\src\clonetest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549019 source:c:\users\alumno\desktop\practicas ll\testing\src\containsalltest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549019 source:c:\users\alumno\desktop\practicas ll\testing\src\containstest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549019 source:c:\users\alumno\desktop\practicas ll\testing\src\deletelinkedlisttest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549019 source:c:\users\alumno\desktop\practicas ll\testing\src\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/Employee.h"
+
+1560549019 source:c:\users\alumno\desktop\practicas ll\testing\utest.c
+	"utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1560549018 source:c:\users\alumno\desktop\practicas ll\src\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/LinkedList.h"
+	"parser.h"
+	"employee.h"
+	"utn.h"
+	"controller.h"
+	"../testing/inc/main_test.h"
+
+1560549018 c:\users\alumno\desktop\practicas ll\src\parser.h
+
+1560549018 c:\users\alumno\desktop\practicas ll\src\employee.h
+
+1560549018 c:\users\alumno\desktop\practicas ll\src\utn.h
+
+1560549018 c:\users\alumno\desktop\practicas ll\src\controller.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\main_test.h
+
+1560549018 source:c:\users\alumno\desktop\practicas ll\src\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"employee.h"
+	"utn.h"
+	"../testing/inc/main_test.h"
+	"../inc/LinkedList.h"
+
+1560550313 source:c:\users\alumno\desktop\practicas ll\src\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/LinkedList.h"
+
+1560549018 source:c:\users\alumno\desktop\practicas ll\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../testing/inc/main_test.h"
+	"../inc/LinkedList.h"
+	"employee.h"
+	"parser.h"
+	"utn.h"
+	"controller.h"
+
+1560549018 source:c:\users\alumno\desktop\practicas ll\src\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"employee.h"
+	"utn.h"
+	"../testing/inc/main_test.h"
+	"../inc/LinkedList.h"
+
+1560549018 source:c:\users\alumno\desktop\practicas ll\src\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn.h"
+
+1560549020 source:c:\users\alumno\desktop\practicas ll\testing\src\getnodetest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549020 source:c:\users\alumno\desktop\practicas ll\testing\src\gettest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549020 source:c:\users\alumno\desktop\practicas ll\testing\src\indexoftest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549020 source:c:\users\alumno\desktop\practicas ll\testing\src\isemptytest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549020 source:c:\users\alumno\desktop\practicas ll\testing\src\lentest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549020 source:c:\users\alumno\desktop\practicas ll\testing\src\main_test.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	"../inc/newTest.h"
+	"../inc/addTest.h"
+	"../inc/getNodeTest.h"
+	"../inc/addNodeTest.h"
+	"../inc/deleteLinkedListTest.h"
+	"../inc/lenTest.h"
+	"../inc/getTest.h"
+	"../inc/containsTest.h"
+	"../inc/setTest.h"
+	"../inc/removeTest.h"
+	"../inc/clearTest.h"
+	"../inc/cloneTest.h"
+	"../inc/pushTest.h"
+	"../inc/indexOfTest.h"
+	"../inc/isEmptyTest.h"
+	"../inc/popTest.h"
+	"../inc/subListTest.h"
+	"../inc/containsAllTest.h"
+	"../inc/sortTest.h"
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\newtest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\addtest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\getnodetest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\addnodetest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\deletelinkedlisttest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\lentest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\gettest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\containstest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\settest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\removetest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\cleartest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\clonetest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\pushtest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\indexoftest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\isemptytest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\poptest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\sublisttest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\containsalltest.h
+
+1560549019 c:\users\alumno\desktop\practicas ll\testing\inc\sorttest.h
+
+1560549020 source:c:\users\alumno\desktop\practicas ll\testing\src\newtest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+
+1560549020 source:c:\users\alumno\desktop\practicas ll\testing\src\poptest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549020 source:c:\users\alumno\desktop\practicas ll\testing\src\pushtest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549020 source:c:\users\alumno\desktop\practicas ll\testing\src\removetest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549020 source:c:\users\alumno\desktop\practicas ll\testing\src\settest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549020 source:c:\users\alumno\desktop\practicas ll\testing\src\sorttest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
+1560549020 source:c:\users\alumno\desktop\practicas ll\testing\src\sublisttest.c
+	"../../testing/utest.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/LinkedList.h"
+	"../../testing/inc/Employee.h"
+
