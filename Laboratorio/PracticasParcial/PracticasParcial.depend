@@ -1,0 +1,74 @@
+# depslib dependency file v1.0
+1561278405 source:c:\users\thiag\desktop\practicasparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Save.h"
+	"Productos.h"
+	"utn.h"
+	"Parser.h"
+	"Controller.h"
+
+1560557037 c:\users\thiag\desktop\practicasparcial\linkedlist.h
+
+1560557037 c:\users\thiag\desktop\practicasparcial\utn.h
+
+1560557037 source:c:\users\thiag\desktop\practicasparcial\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn.h"
+
+1561278094 source:c:\users\thiag\desktop\practicasparcial\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561278928 source:c:\users\thiag\desktop\practicasparcial\productos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Productos.h"
+	"utn.h"
+
+1561278897 c:\users\thiag\desktop\practicasparcial\productos.h
+
+1561278620 source:c:\users\thiag\desktop\practicasparcial\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Productos.h"
+	"utn.h"
+	"Parser.h"
+
+1561275339 c:\users\thiag\desktop\practicasparcial\parser.h
+
+1561279060 source:c:\users\thiag\desktop\practicasparcial\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Productos.h"
+	"utn.h"
+	"Parser.h"
+	"Controller.h"
+
+1561277610 c:\users\thiag\desktop\practicasparcial\controller.h
+
+1561275170 c:\users\thiag\desktop\practicasparcial\save.h
+
+1561278999 source:c:\users\thiag\desktop\practicasparcial\save.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Save.h"
+	"Productos.h"
+	"utn.h"
+
