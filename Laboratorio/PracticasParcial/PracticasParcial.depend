@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1561279377 source:c:\users\thiag\desktop\practicasparcial\main.c
+1561280675 source:c:\users\thiag\desktop\practicasparcial\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -10,7 +10,7 @@
 	"Parser.h"
 	"Controller.h"
 
-1560557037 c:\users\thiag\desktop\practicasparcial\linkedlist.h
+1561280900 c:\users\thiag\desktop\practicasparcial\linkedlist.h
 
 1560557037 c:\users\thiag\desktop\practicasparcial\utn.h
 
@@ -22,13 +22,13 @@
 	<ctype.h>
 	"utn.h"
 
-1561278094 source:c:\users\thiag\desktop\practicasparcial\linkedlist.c
+1561281575 source:c:\users\thiag\desktop\practicasparcial\linkedlist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"LinkedList.h"
 
-1561278928 source:c:\users\thiag\desktop\practicasparcial\productos.c
+1561282294 source:c:\users\thiag\desktop\practicasparcial\productos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -36,7 +36,7 @@
 	"Productos.h"
 	"utn.h"
 
-1561278897 c:\users\thiag\desktop\practicasparcial\productos.h
+1561282095 c:\users\thiag\desktop\practicasparcial\productos.h
 
 1561278620 source:c:\users\thiag\desktop\practicasparcial\parser.c
 	<stdio.h>

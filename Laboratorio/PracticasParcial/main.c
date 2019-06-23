@@ -13,6 +13,8 @@ int main()
 {
     char seguir='s';
     LinkedList* pArrayList = ll_newLinkedList();
+    LinkedList* pArrayListMap = NULL;
+    LinkedList* pArrayListFilth = NULL;
 
     if(pArrayList!=NULL){
         do{
@@ -114,6 +116,22 @@ int main()
                 getchar();
                 break;
             case 10:
+               pArrayListMap=ll_map(pArrayList,eProducto_duplicarPrecio);
+                if(pArrayListMap!=NULL){
+                    saveAsBinary("map.bin",pArrayListMap);
+                    controller_ListEmployee(pArrayListMap);
+                }
+                getchar();
+                break;
+            case 11:
+                pArrayListFilth=ll_filter(pArrayList,eProducto_filterCant);
+                if(pArrayListFilth!=NULL){
+                    saveAsBinary("filther.bin",pArrayListFilth);
+                    controller_ListEmployee(pArrayListFilth);
+                }
+                getchar();
+                break;
+            case 12:
                 seguir='n';
                 break;
             }

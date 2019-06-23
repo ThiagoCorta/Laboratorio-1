@@ -197,10 +197,12 @@ int menu()
     printf("7. Listar productos\n");
     printf("8. Guardar los datos de los productos en el archivo datos.dat\n");
     printf("9. Guardar los datos de los productos en el archivo temporal.dat\n");
-    printf("10. Salir\n");
+    printf("10. prueba MAP// guarda en un nuevo archivo BIN\n");
+    printf("11. prueba FILTRO// guarda en un nuevo archivo BIN\n");
+    printf("12. Salir\n");
 
     fflush(stdin);
-    utn_getEntero(&opc,20,"\nIngresar opcion : ","\nError ingresar opcion valida.",1,10);
+    utn_getEntero(&opc,20,"\nIngresar opcion : ","\nError ingresar opcion valida.",1,12);
 
     return opc;
 
@@ -334,5 +336,62 @@ int editProducto(LinkedList* pArrayList){
 
     }
 
+    return todoOk;
+}
+
+/*eProducto* eProducto_duplicarPrecio(void* pProd){
+
+    eProducto* p1;
+
+    if(pProd != NULL){
+        p1=(eProducto*)pProd;
+        p1->importe=p1->importe * 2;
+    }
+    return p1;
+}
+
+int eProducto_filterCant(void* pAux){
+    int todoOk=0;
+    eProducto* p1 = NULL;
+    if(pAux!=NULL){
+        p1=(eProducto*)pAux;
+        if(p1->cant>5){
+            todoOk = 1;
+        }
+    }
+    return todoOk;
+}*/
+
+eProducto* eProducto_duplicarPrecio(void* pProd){
+    eProducto* auxProd=eProducto_new();
+    eProducto* p1;
+    int auxImp,auxCant,auxCod,auxStatus;
+    char auxDesc[50];
+    p1=(eProducto*)pProd;
+    if(p1 != NULL && auxProd!=NULL){
+        eProducto_getCod(pProd,&auxCod);
+        eProducto_getImporte(pProd,&auxImp);
+        eProducto_getCant(pProd,&auxCant);
+        eProducto_getDesc(pProd,auxDesc);
+        eProducto_getStatus(pProd,&auxStatus);
+
+        eProducto_setCod(auxProd,auxCod);
+        eProducto_setDesc(auxProd,auxDesc);
+        eProducto_setImporte(auxProd,auxImp*2);
+        eProducto_setCant(auxProd,auxCant);
+        eProducto_setStatus(auxProd,auxStatus);
+    }
+    return auxProd;
+}
+
+int eProducto_filterCant(void* pProd){
+    int todoOk = 0;
+    eProducto* p1;
+    p1=(eProducto*)pProd;
+    if(p1!= NULL){
+        if(p1->cant > 5){
+            todoOk=1;
+        }
+    }
     return todoOk;
 }

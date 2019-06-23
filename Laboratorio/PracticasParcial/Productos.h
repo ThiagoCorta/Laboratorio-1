@@ -26,3 +26,5 @@ int menu();
 int compareByDesc(void* emp1, void* emp2);
 int addProducto(LinkedList* pArrayList);
 int editProducto(LinkedList* pArrayList);
+eProducto* eProducto_duplicarPrecio(void* pProd);
+int eProducto_filterCant(void* pAux);
