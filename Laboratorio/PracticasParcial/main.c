@@ -79,7 +79,11 @@ int main()
                 break;
             case 7:
                 if(!ll_isEmpty(pArrayList)){
-                    controller_ListEmployee(pArrayList);
+                    if(controller_sortProd(pArrayList)){
+                        controller_ListEmployee(pArrayList);
+                    }else{
+                        puts("\n\nError al ordenar los productos.");
+                    }
                 }else{
                     puts("\n\nPrimero cargue los productos al sistema!\n");
                 }
