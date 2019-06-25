@@ -1,0 +1,70 @@
+# depslib dependency file v1.0
+1561422457 source:d:\nueva carpeta (2)\thiago\thiagocorta\main.c
+	<stdio.h>
+	<stdlib.h>
+	"eDominio.h"
+	"Linkedlist.h"
+	"Controller.h"
+	"parser.h"
+	"utn.h"
+	"Save.h"
+
+1561422502 source:d:\nueva carpeta (2)\thiago\thiagocorta\edominio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"eDominio.h"
+	"utn.h"
+
+1561413250 source:d:\nueva carpeta (2)\thiago\thiagocorta\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561412436 d:\nueva carpeta (2)\thiago\thiagocorta\linkedlist.h
+
+1561422191 d:\nueva carpeta (2)\thiago\thiagocorta\edominio.h
+
+1561417522 source:d:\nueva carpeta (2)\thiago\thiagocorta\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"eDominio.h"
+	"utn.h"
+	"parser.h"
+
+1561412479 d:\nueva carpeta (2)\thiago\thiagocorta\utn.h
+
+1561414222 d:\nueva carpeta (2)\thiago\thiagocorta\parser.h
+
+1561418195 source:d:\nueva carpeta (2)\thiago\thiagocorta\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"parser.h"
+	"Controller.h"
+	"eDominio.h"
+
+1561417149 d:\nueva carpeta (2)\thiago\thiagocorta\controller.h
+
+1561412479 source:d:\nueva carpeta (2)\thiago\thiagocorta\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn.h"
+
+1561420070 source:d:\nueva carpeta (2)\thiago\thiagocorta\save.c
+	<stdio.h>
+	<stdlib.h>
+	"eDominio.h"
+	"Linkedlist.h"
+	"Controller.h"
+	"parser.h"
+	"utn.h"
+
+1561419950 d:\nueva carpeta (2)\thiago\thiagocorta\save.h
+
