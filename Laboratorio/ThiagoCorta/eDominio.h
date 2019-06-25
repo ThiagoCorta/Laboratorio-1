@@ -3,7 +3,7 @@ typedef struct
     int id;
     char dominio[50];
     int anio;
-    char tipo;
+    //char tipo;
 }eDominio;
 
 
