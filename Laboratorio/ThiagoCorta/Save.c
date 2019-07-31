@@ -11,7 +11,7 @@ int saveAsText(char* path , LinkedList* pArrayList)
     FILE* f;
     eDominio* this;
     int len,auxId,auxAnio,todoOk=0,i;
-    char auxDominio[50];
+    char auxDominio[50], auxTipo;
 
     if(path!=NULL && pArrayList!=NULL){
         len=ll_len(pArrayList);
@@ -27,7 +27,8 @@ int saveAsText(char* path , LinkedList* pArrayList)
                     eDominio_getId(this,&auxId);
                     eDominio_getDominio(this,auxDominio);
                     eDominio_getAnio(this,&auxAnio);
-                    fprintf(f,"%d,%s,%d\n",auxId,auxDominio,auxAnio);
+                    eDominio_getTipo(this,&auxTipo);
+                    fprintf(f,"%d,%s,%d,%c\n",auxId,auxDominio,auxAnio,auxTipo);
                 }
             }
             fclose(f);

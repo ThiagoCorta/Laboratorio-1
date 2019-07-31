@@ -68,3 +68,72 @@
 
 1561419950 d:\nueva carpeta (2)\thiago\thiagocorta\save.h
 
+1561423765 source:c:\users\thiag\desktop\thiagocorta\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"parser.h"
+	"Controller.h"
+	"eDominio.h"
+
+1561423765 c:\users\thiag\desktop\thiagocorta\linkedlist.h
+
+1561423765 c:\users\thiag\desktop\thiagocorta\parser.h
+
+1561423765 c:\users\thiag\desktop\thiagocorta\controller.h
+
+1564554755 c:\users\thiag\desktop\thiagocorta\edominio.h
+
+1561423765 source:c:\users\thiag\desktop\thiagocorta\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1564554755 source:c:\users\thiag\desktop\thiagocorta\main.c
+	<stdio.h>
+	<stdlib.h>
+	"eDominio.h"
+	"Linkedlist.h"
+	"Controller.h"
+	"parser.h"
+	"utn.h"
+	"Save.h"
+
+1561423765 c:\users\thiag\desktop\thiagocorta\utn.h
+
+1561423765 c:\users\thiag\desktop\thiagocorta\save.h
+
+1561423765 source:c:\users\thiag\desktop\thiagocorta\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"eDominio.h"
+	"utn.h"
+	"parser.h"
+
+1564554872 source:c:\users\thiag\desktop\thiagocorta\save.c
+	<stdio.h>
+	<stdlib.h>
+	"eDominio.h"
+	"Linkedlist.h"
+	"Controller.h"
+	"parser.h"
+	"utn.h"
+
+1561423765 source:c:\users\thiag\desktop\thiagocorta\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"utn.h"
+
+1564554686 source:c:\users\thiag\desktop\thiagocorta\edominio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"eDominio.h"
+	"utn.h"
+

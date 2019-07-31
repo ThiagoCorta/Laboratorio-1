@@ -33,12 +33,12 @@ int eDominio_getId(eDominio* this,int* id)
     return todoOk;
 }
 
-/*int eDominio_setTipo(eDominio* this,char* auxTipo)
+int eDominio_setTipo(eDominio* this,char auxTipo)
 {
     int todoOk=0;
-    if(this!=NULL && auxTipo!=NULL && strlen(auxTipo)>1)
+    if(this!=NULL && (auxTipo!='A' || auxTipo!='M'))
     {
-        strcpy(this->tipo,auxTipo);
+        this->tipo=auxTipo;
         todoOk=1;
     }
     return todoOk;
@@ -49,11 +49,11 @@ int eDominio_getTipo(eDominio* this,char* auxTipo)
     int todoOk=0;
     if(this!=NULL && auxTipo!=NULL)
     {
-        strcpy(auxTipo,this->tipo);
+        *auxTipo=this->tipo;
         todoOk=1;
     }
     return todoOk;
-}*/
+}
 
 int eDominio_setDominio(eDominio* this,char* auxDom)
 {
@@ -108,7 +108,7 @@ eDominio* eDominio_new()
     new = (eDominio*) malloc(sizeof(eDominio));
     if(new != NULL){
         new->id = 0;
-       /* strcpy(new->tipo," ");*/
+        new->tipo='X';
         new->anio=0;
         strcpy(new->dominio," ");
     }else{
@@ -161,16 +161,13 @@ int menu()
     printf("Menu:\n\n");
     printf("1. Cargar los datos.\n");
     printf("2. Mostrar datos.\n");
-    printf("3. Filtro de autos.\n");
-    printf("4. Map de autos y save .csv\n");
-    printf("5. Print autos.\n");
-    printf("6. Filth de motos.\n");
-    printf("7. Map de motos y save.csv\n");
-    printf("8. Print motos.\n");
-    printf("9. Salir\n");
+    printf("3. Map.\n");
+    printf("4. Filth autos.\n");
+    printf("5. Filth motos.\n");
+    printf("6. Salir\n");
 
     fflush(stdin);
-    utn_getEntero(&opc,20,"\nIngresar opcion : ","\nError ingresar opcion valida.",1,9);
+    utn_getEntero(&opc,20,"\nIngresar opcion : ","\nError ingresar opcion valida.",1,6);
 
     return opc;
 
@@ -179,7 +176,7 @@ int menu()
 int printDominio(eDominio* this)
 {
     int todoOk=0,id,anio;
-    char dominio[20];
+    char dominio[20], tipo;
 
 
 
@@ -187,7 +184,8 @@ int printDominio(eDominio* this)
         eDominio_getId(this,&id);
         eDominio_getDominio(this,dominio);
         eDominio_getAnio(this,&anio);
-        printf("%5d %12s %12d\n",id,dominio,anio);
+        eDominio_getTipo(this,&tipo);
+        printf("%5d %12s %12d %5c\n",id,dominio,anio,tipo);
         todoOk=1;
     }
 
@@ -216,6 +214,20 @@ int compareByName(void* eDom1, void* eDom2){
     return todoOk;
 }
 
+int eDominio_filterM(void* pAux){
+     int todoOk = 0;
+    char aux;
+    if(pAux!=NULL){
+        eDominio_getTipo(pAux,&aux);
+        if(aux=='M'){
+            todoOk=1;
+        }else{
+            todoOk=-1;
+        }
+    }
+    return todoOk;
+}
+
 int eDominio_filterAuto(void* pAux){
     int todoOk = 0;
     char auxDom[20];
@@ -233,11 +245,11 @@ int eDominio_filterAuto(void* pAux){
     return todoOk;
 }
 
-void* eDominio_llAutos(void* pAux){
+void* eDominio_llmap(void* pAux){
     eDominio* pDominio=eDominio_new();
     int auxId,auxAnio;
     char auxDominio[20];
-   // char car='A';
+    char car='A', moto='M';
     if(pAux != NULL){
         if(eDominio_filterAuto(pAux)==1){
             eDominio_getId(pAux,&auxId);
@@ -247,41 +259,9 @@ void* eDominio_llAutos(void* pAux){
             eDominio_setId(pDominio,auxId);
             eDominio_setDominio(pDominio,auxDominio);
             eDominio_setAnio(pDominio,auxAnio);
-//            eDominio_setTipo(pDominio,car);
+            eDominio_setTipo(pDominio,car);
 
         }else{
-            pDominio=NULL;
-        }
-
-    }
-    return (void*)pDominio;
-
-}
-
-int eDominio_filterMoto(void* pAux){
-    int todoOk = 0;
-    char auxDom[20];
-    char aux[3];
-    if(pAux!=NULL){
-    eDominio_getDominio(pAux,auxDom);
-    for(int i=3;i<strlen(auxDom);i++){
-        *(auxDom+i)=0;
-    }
-    strcpy(aux,auxDom);
-        if(isInt(aux)){
-            todoOk=1;
-        }
-    }
-    return todoOk;
-}
-
-void* eDominio_llMotos(void* pAux){
-    eDominio* pDominio=eDominio_new();
-    int auxId,auxAnio;
-    char auxDominio[20];
-   // char moto='M';
-    if(pAux != NULL){
-        if(eDominio_filterMoto(pAux)==1){
             eDominio_getId(pAux,&auxId);
             eDominio_getDominio(pAux,auxDominio);
             eDominio_getAnio(pAux,&auxAnio);
@@ -289,14 +269,27 @@ void* eDominio_llMotos(void* pAux){
             eDominio_setId(pDominio,auxId);
             eDominio_setDominio(pDominio,auxDominio);
             eDominio_setAnio(pDominio,auxAnio);
-//            eDominio_setTipo(pDominio,moto);
-
-        }else{
-            pDominio=NULL;
+            eDominio_setTipo(pDominio,moto);
         }
 
     }
     return (void*)pDominio;
 
 }
+
+int eDominio_filthA(void* pAux){
+    int todoOk = 0;
+    char aux;
+    if(pAux!=NULL){
+        eDominio_getTipo(pAux,&aux);
+        if(aux=='A'){
+            todoOk=1;
+        }else{
+            todoOk=-1;
+        }
+    }
+    return todoOk;
+}
+
+
 

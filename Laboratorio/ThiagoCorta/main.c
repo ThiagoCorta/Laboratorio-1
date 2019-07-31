@@ -40,83 +40,44 @@ int main()
                 break;
                 case 3:
                     if(!ll_isEmpty(pList)){
-                        pAutos = ll_filter(pList,eDominio_filterAuto);
-                           if(pAutos!=NULL){
-                             controller_List(pAutos);
-                           }
-                    }else{
-                        puts("Primero cargar los datos.");
-                    }
-
-                   getchar();
-                break;
-                case 4:
-                    if(!ll_isEmpty(pList)){
-                        pAutos=ll_map(pList,eDominio_llAutos);
-                        if(pAutos!=NULL){
-                            if(saveAsText("autos.csv",pAutos)){
-                                puts("Se cargo de forma correcta!");
-                             }else{
-                                puts("Error");
-                             }
-                        }
+                        pList=ll_map(pList,eDominio_llmap);
+                            if(pList!=NULL){
+                                puts("Map correcto");
+                            }else{
+                                exit(EXIT_FAILURE);
+                            }
                     }else{
                         puts("Primero cargue los datos");
                     }
                     getchar();
                     break;
-                case 5:
-                    if(pAutos!=NULL && !ll_isEmpty(pAutos)){
-                        if(controller_sort(pAutos)){
-                            controller_List(pAutos);
-                        }else{
-                            puts("Error al ordenar");
-                        }
+                case 4:
+                    if(!ll_isEmpty(pList)){
+                        pAutos = ll_filter(pList,eDominio_filthA);
+                           if(pAutos!=NULL){
+                                if(saveAsText("autos.csv",pAutos)){
+                                puts("Se guardo correcto");
+                                }
+                           }
                     }else{
-                        puts("Primero hacer el Map");
+                        puts("Primero cargar los datos");
                     }
                     getchar();
-                break;
-                case 6:
+                    break;
+                case 5:
                      if(!ll_isEmpty(pList)){
-                        pMotos = ll_filter(pList,eDominio_filterMoto);
+                        pMotos = ll_filter(pList,eDominio_filterM);
                            if(pMotos!=NULL){
-                            controller_loadFromText("autos.csv",pAutos);
-                             controller_List(pMotos);
+                                if(saveAsText("motos.csv",pMotos)){
+                                    puts("Correcto");
+                                }
                            }
                     }else{
                         puts("Primero cargar los datos");
                     }
                    getchar();
-                case 7:
-                    if(!ll_isEmpty(pList)){
-                        pMotos=ll_map(pList,eDominio_llMotos);
-                        if(pMotos!=NULL){
-                             if(saveAsText("motos.csv",pMotos)){
-                                puts("Se cargo de forma correcta!");
-                             }else{
-                                puts("Error");
-                             }
-                        }
-                    }else{
-                        puts("Primero cargue los datos");
-                    }
-                    getchar();
-                    break;
-                 case 8:
-                   if(pMotos!=NULL && !ll_isEmpty(pMotos)){
-                        if(controller_sort(pMotos)){
-                            controller_loadFromText("motos.csv",pMotos);
-                            controller_List(pMotos);
-                        }else{
-                            puts("Error al ordenar");
-                        }
-                    }else{
-                        puts("Primero hacer el map");
-                    }
-                    getchar();
-                    break;
-                 case 9:
+                   break;
+                 case 6:
                     seguir='n';
                     break;
             }
@@ -126,3 +87,4 @@ int main()
     }
     return 0;
 }
+
